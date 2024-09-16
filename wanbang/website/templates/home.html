@@ -1,0 +1,367 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+  <!-- ***** Welcome Area Start ***** -->
+  <!-- <section class="welcome-area"> -->
+    <!-- Welcome Slides -->
+    <!-- <div class="welcome-slides owl-carousel"> -->
+      <!-- Single Welcome Slide -->
+      <!-- <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'website/img/bg-img/1.jpg' %});">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12"> -->
+              <!-- Welcome Text -->
+              <!-- <div class="welcome-text text-center">
+                <h3 data-animation="fadeInUp" data-delay="100ms">誉铂思图</h3>
+                <p data-animation="fadeInUp" data-delay="300ms">为组织核心竞争力提供价值</p>
+                <div class="welcome-btn-group">
+                    <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">了解更多</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Single Welcome Slide -->
+      <!-- <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'website/img/bg-img/bydDWM.gif' %});">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12"> -->
+              <!-- Welcome Text -->
+              <!-- <div class="welcome-text text-center">
+                <h3 data-animation="fadeInDown" data-delay="100ms">誉铂思图</h3>
+                <p data-animation="fadeInDown" data-delay="300ms">为组织核心竞争力提供价值</p>
+                <div class="welcome-btn-group">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">了解更多</a>
+                  <div id ="video-area" > </div> -->
+                  <!-- <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInDown" data-delay="700ms">联系我们</a> -->
+                <!-- </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- ***** Welcome Area End ***** -->
+<div class="welcome-welcome-slide bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/1.jpg' %});">
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'website/css/style5.css' %}">
+<style>
+</style>
+<body>
+    <canvas id="canvas"></canvas>
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <!-- <h3 data-animation="fadeInDown" data-delay="100ms">Wanbang LLC</h3> -->
+                <h2 data-animation="fadeInDown" data-delay="300ms">Wanbang LLC</h2>
+                <h2 data-animation="fadeInDown" data-delay="300ms">Expert in Interior & Exterior Renovation</h2>
+                <br>
+                <div class="welcome-btn-group">
+                  <a href="#learn-more" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">How We Work</a>
+                  <!-- <a href="#" class="btn dento-btn mx-2 active" data-animation="fadeInDown" data-delay="700ms">联系我们</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id ="learn-more" > 
+        </div>
+        </div>
+</div>
+
+
+
+<script>
+let resizeReset = function() {
+	w = canvasBody.width = window.innerWidth;
+	h = canvasBody.height = window.innerHeight;
+}
+
+const opts = { 
+	particleColor: "rgb(200,200,200)",
+	lineColor: "rgb(200,200,200)",
+	particleAmount: 10,
+	defaultSpeed: 1,
+	variantSpeed: 1,
+	defaultRadius: 2,
+	variantRadius: 2,
+	linkRadius: 200,
+};
+
+window.addEventListener("resize", function(){
+	deBouncer();
+});
+
+let deBouncer = function() {
+    clearTimeout(tid);
+    tid = setTimeout(function() {
+        resizeReset();
+    }, delay);
+};
+
+let checkDistance = function(x1, y1, x2, y2){ 
+	return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+};
+
+let linkPoints = function(point1, hubs){ 
+	for (let i = 0; i < hubs.length; i++) {
+		let distance = checkDistance(point1.x, point1.y, hubs[i].x, hubs[i].y);
+		let opacity = 1 - distance / opts.linkRadius;
+		if (opacity > 0) { 
+			drawArea.lineWidth = 0.5;
+			drawArea.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
+			drawArea.beginPath();
+			drawArea.moveTo(point1.x, point1.y);
+			drawArea.lineTo(hubs[i].x, hubs[i].y);
+			drawArea.closePath();
+			drawArea.stroke();
+		}
+	}
+}
+
+Particle = function(xPos, yPos){ 
+	this.x = Math.random() * w; 
+	this.y = Math.random() * h;
+	this.speed = opts.defaultSpeed + Math.random() * opts.variantSpeed; 
+	this.directionAngle = Math.floor(Math.random() * 360); 
+	this.color = opts.particleColor;
+	this.radius = opts.defaultRadius + Math.random() * opts. variantRadius; 
+	this.vector = {
+		x: Math.cos(this.directionAngle) * this.speed,
+		y: Math.sin(this.directionAngle) * this.speed
+	};
+	this.update = function(){ 
+		this.border(); 
+		this.x += this.vector.x; 
+		this.y += this.vector.y; 
+	};
+	this.border = function(){ 
+		if (this.x >= w || this.x <= 0) { 
+			this.vector.x *= -1;
+		}
+		if (this.y >= h || this.y <= 0) {
+			this.vector.y *= -1;
+		}
+		if (this.x > w) this.x = w;
+		if (this.y > h) this.y = h;
+		if (this.x < 0) this.x = 0;
+		if (this.y < 0) this.y = 0;	
+	};
+	this.draw = function(){ 
+		drawArea.beginPath();
+		drawArea.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+		drawArea.closePath();
+		drawArea.fillStyle = this.color;
+		drawArea.fill();
+	};
+};
+
+function setup(){ 
+	particles = [];
+	resizeReset();
+	for (let i = 0; i < opts.particleAmount; i++){
+		particles.push( new Particle() );
+	}
+	window.requestAnimationFrame(loop);
+}
+
+function loop(){ 
+	window.requestAnimationFrame(loop);
+	drawArea.clearRect(0,0,w,h);
+	for (let i = 0; i < particles.length; i++){
+		particles[i].update();
+		particles[i].draw();
+	}
+	for (let i = 0; i < particles.length; i++){
+		linkPoints(particles[i], particles);
+	}
+}
+
+const canvasBody = document.getElementById("canvas"),
+drawArea = canvasBody.getContext("2d");
+let delay = 200, tid,
+rgb = opts.lineColor.match(/\d+/g);
+resizeReset();
+setup();
+
+</script>
+
+</body>
+</html> 
+</div>
+<br><br><br>
+  <!-- ****** About Us Area Start ******* -->
+  <section class="testimonials-area section-padding-100-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- About Content -->
+                <div class="col-12 col-lg-5">
+                    <div class="single-service mb-50">
+                    <!-- Section Heading -->
+                    <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;购买管理理咨询服务的本质，不是获得一劳永逸的⽅方案，而是促⽣企业的学习及成⻓基因，这是企业⻓足竞争力的最⾼壁垒;
+                        ⽽学习与成⻓基因，相⽐通过课堂知识培训，在实践互动中生成更具有效性。 </h6>
+                    </div>
+                    <center>
+                    <div class="row">
+                        <div class="col-6 col-md-6">
+                            <div class="single-service--area text-center mb-50">
+                                <div class="icon--">
+                            <a href="{% url 'consulting' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/one.png' %}" alt=""></a>
+                            </div>
+                            <h6>组织能力建设</h6>
+                        </div>
+                        </div>
+                        
+                        <div class="col-6 col-md-6">
+                            <div class="single-service--area text-center mb-50">
+                                <div class="icon--">
+                                <a href="{% url 'workshop' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/two.png' %}" alt=""></a>
+                            </div>
+                            <h6>促变工作坊</h6>
+                        </div>
+                        </div>
+                    </div>
+                    </center>
+                </div> 
+
+                <div class="clearfix visible-xs"></div>
+
+
+                <div class="col-12 col-lg-1">
+                </div>  
+                    
+                    <!-- Video Area -->
+                        <div class="col-12 col-lg-6">
+                            <div class="dento-video-area mb-100">
+                                <!DOCTYPE html>
+                                <html>
+                                <title>W3.CSS</title>
+                                <meta name="viewport" content="width=device-width, initial-scale=1">
+                                <link rel="stylesheet" href="{% static 'website/css/style4.css' %}">
+                                <style>
+                                .mySlides {display:none}
+                                .w3-left, .w3-right, .w3-badge {cursor:pointer}
+                                .w3-badge {height:13px;width:13px;padding:0}
+                                </style>
+                                <body>
+
+                                <!-- <div class="w3-container">
+                                <h2>Slideshow Indicators</h2>
+                                <p>An example of using buttons to indicate how many slides there are in the slideshow, and which slide the user is currently viewing.</p>
+                                </div> -->
+
+                                <div class="w3-content w3-display-container" style="max-width:800px">
+                                <img class="mySlides" src="{% static 'website/img/core-img/首页图片栏001.png' %}" style="width:100%">
+                                <img class="mySlides" src="{% static 'website/img/core-img/首页图片栏002.png' %}" style="width:100%">
+                                <img class="mySlides" src="{% static 'website/img/core-img/首页图片栏003.png' %}" style="width:100%">
+                                <img class="mySlides" src="{% static 'website/img/core-img/首页图片栏004.png' %}" style="width:100%">
+                                <div class="w3-button w3-display-left w3-whitebutton" onclick="plusDivs(-1)">&#10094;</div>
+                                <div class="w3-button w3-display-right w3-whitebutton" onclick="plusDivs(1)">&#10095;</div>
+                                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                                </div>
+                                </div>
+
+                                <script>
+                                var slideIndex = 1;
+                                showDivs(slideIndex);
+                                carousel();
+
+                                function plusDivs(n) {
+                                showDivs(slideIndex += n);
+                                }
+
+                                function currentDiv(n) {
+                                showDivs(slideIndex = n);
+                                }
+
+                                function showDivs(n) {
+                                var i;
+                                var x = document.getElementsByClassName("mySlides");
+                                var dots = document.getElementsByClassName("demo");
+                                if (n > x.length) {slideIndex = 1}
+                                if (n < 1) {slideIndex = x.length}
+                                for (i = 0; i < x.length; i++) {
+                                    x[i].style.display = "none";  
+                                }
+                                for (i = 0; i < dots.length; i++) {
+                                    dots[i].className = dots[i].className.replace(" w3-white", "");
+                                }
+                                x[slideIndex-1].style.display = "block";  
+                                dots[slideIndex-1].className += " w3-white";
+                                }
+
+                                function carousel() {
+                                var i;
+                                var x = document.getElementsByClassName("mySlides");
+                                var dots = document.getElementsByClassName("demo");
+                                for (i = 0; i < x.length; i++) {
+                                    x[i].style.display = "none";
+                                }
+                                for (i = 0; i < dots.length; i++) {
+                                    dots[i].className = dots[i].className.replace(" w3-white", "");
+                                }
+                                slideIndex++;
+                                if (slideIndex > x.length) {slideIndex = 1}
+                                x[slideIndex-1].style.display = "block";
+                                dots[slideIndex-1].className += " w3-white";
+                                setTimeout(carousel, 3000); // Change image every 2 seconds
+                                }
+
+                                </script>
+
+                                </body>
+                                </html> 
+
+                            </div>
+                        </div>
+    </div>
+            <!-- Single Skills Area -->
+            <!-- <div class="single-skills-area mt-30">
+              <h6>Experience Dentist</h6>
+              <div id="bar1" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="80"></span>
+              </div>
+            </div> -->
+
+            <!-- Single Skills Area -->
+            <!-- <div class="single-skills-area mt-30">
+              <h6>Modern Equipment</h6>
+              <div id="bar2" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="65"></span>
+              </div>
+            </div> -->
+
+            <!-- Single Skills Area -->
+            <!-- <div class="single-skills-area mt-30">
+              <h6>Friendly Staff</h6>
+              <div id="bar3" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="85"></span>
+              </div>
+            </div> -->
+        <!-- About Us Thumbnail -->
+                <!-- Single Service -->
+            <!-- Play Button -->
+            <!-- <a href="#" class="video-play-button"><i class="fa fa-play" aria-hidden="true"></i></a> -->
+      </div>
+  </section>
+<br><br>
+
+
+
+  <!-- <br><br><br><br><br><br><br><br> -->
+  {% endblock %}

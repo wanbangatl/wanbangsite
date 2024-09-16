@@ -1,0 +1,446 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} 关于您 {% endblock %}
+{% block content %}
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/shakehand_bg.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">关于您</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> 主页</a></li>
+              <li class="breadcrumb-item active" aria-current="page">关于您</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Testimonials Area Start ***** -->
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url({% static 'website/img/bg-img/aboutu_bg.jpg' %});">
+    
+
+    {%if question_name %}
+    <div class="welcome-text text-center">
+        <p>尊敬的 <strong>{{question_name}}</strong> 先生/女士,<br>我们已经收到您的问题，将尽快联系您 <strong>{{question_one_detail}}</strong></p>
+    <div class="welcome-text text-center">
+    {% else %}
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Testimonials Slides -->
+          <div class="testimonials-slides owl-carousel">
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Content -->
+              <div class="col-12 col-md-1"></div>
+              <div class="testimonial-content col-12 col-md-10">
+                <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;过去我们在细分领域内独占鳌头，近两年出现同跑道竞争者，虽然规模还远不及我们，但从竞争者的单位利润率、年增长来看，后劲逼人。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;反观我们自身，近两年反而更多是在“吃老本”，内部运营效率惰怠，人浮于事；各业务板块的经营活动情况反馈到我这里，或流于表面数字或信息置后，难以支持我对经营活动效能予以事前干预；授权多了吧，担心权利垄断引发系统风险，授权少了吧，问责不清、诸事冗慢。这夜不能寐的担忧何时有解？</h5>
+                <h6 align="right">-- 许先生</h6>
+                <p align="right">董事长</p>
+                <br>
+                <div class="welcome-text text-center">
+                <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                </div>
+              </div>
+              <div class="col-12 col-md-1"></div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+                <!-- Content -->
+                <div class="col-12 col-md-1"></div>
+                <div class="testimonial-content col-12 col-md-10">
+                  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着跨区域的规模化发展，却明显感觉团队缺乏干劲，员工福利、奖金我们样样都在同行平均水平之上，但员工大有凭良心上班，凭情绪干活的状态。一方面人力成本每年涨，员工积极性却并不随薪酬待遇增高而增高；另一方面，面对业务需求时，有人无才，老骨干透支地干，后继梯队跟不上……。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如何把握人才的结构、数量、质量，更有的放矢科学分配资源？过去以我为中心，以我的个人管理为半径撬动团队势能，现在如何将这种状态放大至整个组织，组织势能不起来，外部竞争堪忧。</h5>
+                  <h6 align="right">-- 李先生</h6>
+                  <p align="right">总经理</p>
+                  <div class="welcome-text text-center">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1"></div>
+              </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+                <!-- Content -->
+                <div class="col-12 col-md-1"></div>
+                <div class="testimonial-content col-12 col-md-10">
+                  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司的所有权与管理权分离，我担心愿景及价值观淡化。你看这次疫情来袭，面对这桩不可抗力事件，有的企业就能上下一心，共克时艰。企业文化我们一直都比较重视，员工关怀、社会公益、团建拓展等活动也常例开展，但看着某些明星企业价值观深入员工个体内在，还是羡慕不已啊。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;企业文化建设这听上去务虚的事儿，怎么务实了去建设？经济下行、市场放慢，正好修修内功，投入资源，科学地把核心基础建好，蓄力后发。</h5>
+                  <h6 align="right">-- 方先生</h6>
+                  <p align="right">创始人</p>
+                  <br>
+                  <div class="welcome-text text-center">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1"></div>
+              </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+                <!-- Content -->
+                <div class="col-12 col-md-1"></div>
+                <div class="testimonial-content col-12 col-md-10">
+                  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 每年都为人才发展与培训的新内容开发费脑，市场上培训项目选择虽然丰富，但良莠不齐。授课式的知识灌输缺少趣味及实践深度，有乐趣的行为式项目又缺乏认知构建产出。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 事实上高效的习得有70%来源于实践（这符合脑科学），20%来源于被动学习，仅10%源于主动学习。希望找到从动手及实操体验中获得认知重构的训练项目或技术，且是针对我们公司想解决的团队问题定制，真正为公司的人才发展带来高价值营养动力。</h5>
+                  <h6 align="right">-- Cathy Wang</h6>
+                  <p align="right">CHO</p>
+                  <br>
+                  <div class="welcome-text text-center">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1"></div>
+              </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+                <!-- Content -->
+                <div class="col-12 col-md-1"></div>
+                <div class="testimonial-content col-12 col-md-10">
+                  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;花多少钱，该不该花，财务没我理得清楚；财务报表就是一堆死数据，经营决策前也没有一个精准靠谱的测算分析给我作参考，年初定好的预算，基本执行不了。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业务部门抱怨财务制约太多，财务又推脱业务不提供信息。传说中的财务系统我也花大钱上线使用了，但运营效率依然没有起色，我需要科学的体系建设改变粗放管理现状，头痛医头、脚痛医脚看来不解决根本。我的精力都耗在内部管理上也不是长久之计。</h5>
+                  <h6 align="right">-- 徐先生</h6>
+                  <p align="right">创始人兼总经理</p>
+                  <br>
+                  <div class="welcome-text text-center">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1"></div>
+              </div>
+
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+                <!-- Content -->
+                <div class="col-12 col-md-1"></div>
+                <div class="testimonial-content col-12 col-md-10">
+                  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都说20%的高能人才产出相当于80%的普通员工创造的价值总和，我也不惜成本从外部猎取高管，效果却不尽如人意，我看猎头公司倒是兴旺了。这些空降高管，或存活期短，或业绩不如人意，其来去自由，企业和我的时间成本太高。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有没有科学的工具辅助甄选高管，预测其行为风险？有没有某种机制可以辅助那些有想法的空降人才度过高风险的适应期？或者有没有某种赋能项目可以辅导训练组织内部高忠诚度的人才突破能力瓶颈？解决了管理层的中坚力量，我的事情就做成了四分之三。</h5>
+                  <h6 align="right">-- 范先生</h6>
+                  <p align="right">董事长</p>
+                  <div class="welcome-text text-center">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1"></div>
+              </div>
+
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+                <!-- Content -->
+                <div class="col-12 col-md-1"></div>
+                <div class="testimonial-content col-12 col-md-10">
+                  <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今年的销售目标又下来了，中国区将目标浮动增加为美国总部的150%，整个团队显然面临压力。新的市场机会在哪里？客户的需求挖掘是否足够深度？影响前端销售的要素有哪些改善空间？答案在哪里？答案又如何同步共识到我的整个团队？
+                      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我愿意投入1-2天的时间激发整个团队的活力、打开团队的创新思考、形成群体认知智慧，如果能同步其它部门的协同认知，将对接下来的年度销售目标实现注入真切的助力。
+                </h5>
+                  <h6 align="right">-- Frank Xie</h6>
+                  <p align="right">中国区总经理</p>
+                  <div class="welcome-text text-center">
+                  <a href="#video-area" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">我们的解决方案</a>
+                  </div>
+                </div>
+                <div class="col-12 col-md-1"></div>
+              </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- ***** Testimonials Area End ***** -->
+
+
+    <br><br><br><br><br>
+
+    <div class="container">
+        <div class="row">
+          <!-- Section Heading -->
+          <div class="col-12">
+            <div class="section-heading text-center white">
+                <div class="linew"></div>
+                <br>
+              <h2>您关注的问题</h2>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-12">
+            <!-- Appointment Form -->
+            <div class="appointment-form">
+              <form action="#" method="post">
+                  {% csrf_token %}
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group mb-30">
+                      <input type="text" name="question-name" class="form-control" placeholder="您的姓(名)" required>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group mb-30">
+                        <select name="question-title" class="form-control">
+                            <option value=""">称呼</option>
+                            <option value="女士">女士</option>
+                            <option value="先生">先生</option>
+                          </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group mb-30">
+                      <input type="email" name="question-email" class="form-control" placeholder="邮箱" required>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-12">
+                    <div class="form-group mb-30">
+                      <select name="problem-one" class="form-control">
+                        <option value="问题(1)未选择">问题(1)</option>
+                        <optgroup label="公司结构">
+                        <option value="如何塑造企业的绩效与目标管理能力">如何塑造企业的绩效与目标管理能力</option>
+                        <option value="如何激发组织创新活力">如何激发组织创新活力</option>
+                        <option value="如何将战略目标落地为年度行动目标">如何将战略目标落地为年度行动目标</option>
+                        <option value="如何优化配置人力资源以支持业务目标的实现">如何优化配置人力资源以支持业务目标的实现</option>
+                        <option value="如何科学设计薪酬与激励机制">如何科学设计薪酬与激励机制</option>
+                        <option value="如何让老板的目标成为团队、员工的目标">如何让老板的目标成为团队、员工的目标</option>
+                    </optgroup>
+                        <optgroup label="人才管理"">
+                        <option value="如何建立经营活动到管理洞察/干预的即时反馈机制">如何建立经营活动到管理洞察/干预的即时反馈机制</option>
+                        <option value="如何精准招聘人才">如何精准招聘人才</option>
+                        <option value="如何令预算不再失算">如何令预算不再失算</option>
+                        <option value="如何促进跨部门协同">如何促进跨部门协同</option>
+                    </optgroup>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group mb-30">
+                      <select name="problem-two" class="form-control">
+                        <option value="问题(2)未选择">问题(2)</option>
+                        <option value="如何洞察我的市场机会在哪里">如何洞察我的市场机会在哪里</option>
+                        <option value="如何提升客户满意度">如何提升客户满意度</option>
+                        <option value="如何建立或落地组织的文化（使命、愿景、价值观)">如何建立或落地组织的文化（使命、愿景、价值观)</option>
+                        <option value="如何解决空降高管过度期风险">如何解决空降高管过度期风险</option>
+                        <option value="如何建立质量管理体系">如何建立质量管理体系</option>
+                        <option value="如何获得及时高效的数据支持决策">如何获得及时高效的数据支持决策</option>
+                        <option value="如何提升财务职能事前预测的准确度？">如何提升财务职能事前预测的准确度？</option>
+                        <option value="组织的绩效如何被监控、干预？">组织的绩效如何被监控、干预？</option>
+                        <option value="如何促进组织复原力">如何促进组织复原力</option>
+                        <option value="如何提升团队的共情力、协同精神">如何提升团队的共情力、协同精神</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group mb-30">
+                      <select name="problem-three" class="form-control">
+                        <option value="问题(3)未选择">问题(3)</option>
+                        <option value="如何改变内部流程效率">如何改变内部流程效率</option>
+                        <option value="如何提升内控效率？">如何提升内控效率？</option>
+                        <option value="需要一场有实践、有创新、有认知构建产出又贴近业务的训练活动">需要一场有实践、有创新、有认知构建产出又贴近业务的训练活动</option>
+                        <option value="希望了解组织目前可提升的空间具体有哪些？">希望了解组织目前可提升的空间具体有哪些？</option>
+                        <option value="组织有没有隐性的风险？具体是什么？">组织有没有隐性的风险？具体是什么？</option>
+                        <option value="产品创新的群体智慧在哪里？">产品创新的群体智慧在哪里？</option>
+
+                      </select>
+                    </div>
+                  </div> -->
+                
+
+
+
+
+                  <!-- Start of condition selection -->
+                  <!DOCTYPE html>
+                    <html>
+                    <head>
+                    <title></title>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+                    <script type="text/javascript">
+                    var citiesByState1 = {
+                    关于系统性能力建设: ["塑造企业的绩效与目标管理能力","激发组织创新活力","如何将战略目标落地为年度行动目标","让老板的目标成为团队、员工的目标","建立经营活动到管理洞察/干预的即时反馈机制","令预算不再失算","令预算不再失算","提升客户满意度","改变内部流程效率","建立或落地组织的文化（使命、愿景、价值观","如何建立质量管理体系","如何提升财务职能事前预测的准确度?","组织的绩效如何被监控、干预?"],
+                    关于人力资源效能: ["优化配置人力资源以支持业务目标的实现","科学设计薪酬与激励机制","精准招聘人才","解决空降高管过度期风险"],
+                    关于促变: ["促进跨部门协同，激发团队动力及担当","获得及时高效的数据支持决策","洞察我的市场机会在哪里","需要一场有实践、有创新、有认知构建产出又贴近业务的训练活动","引导高层战略协同","产品创新的群体智慧在哪里?","如何促进组织复原力","如何提升团队的共情力、协同精神"],
+                    关于组织问题精准的系统性诊断: ["希望了解组织目前可提升的空间具体有哪些?","组织有没有隐性的风险？具体是什么?","组织的成长性如何?","从组织能力看其未来的持续盈利能力"]
+                    }
+
+                    var citiesByState2 = {
+                    关于系统性能力建设: ["塑造企业的绩效与目标管理能力","激发组织创新活力","如何将战略目标落地为年度行动目标","让老板的目标成为团队、员工的目标","建立经营活动到管理洞察/干预的即时反馈机制","令预算不再失算","令预算不再失算","提升客户满意度","改变内部流程效率","建立或落地组织的文化（使命、愿景、价值观","如何建立质量管理体系","如何提升财务职能事前预测的准确度?","组织的绩效如何被监控、干预?"],
+                    关于人力资源效能: ["优化配置人力资源以支持业务目标的实现","科学设计薪酬与激励机制","精准招聘人才","解决空降高管过度期风险"],
+                    关于促变: ["促进跨部门协同，激发团队动力及担当","获得及时高效的数据支持决策","洞察我的市场机会在哪里","需要一场有实践、有创新、有认知构建产出又贴近业务的训练活动","引导高层战略协同","产品创新的群体智慧在哪里?","如何促进组织复原力","如何提升团队的共情力、协同精神"],
+                    关于组织问题精准的系统性诊断: ["希望了解组织目前可提升的空间具体有哪些?","组织有没有隐性的风险？具体是什么?","组织的成长性如何?","从组织能力看其未来的持续盈利能力"]
+                    }
+
+                    var citiesByState3 = {
+                    关于系统性能力建设: ["塑造企业的绩效与目标管理能力","激发组织创新活力","如何将战略目标落地为年度行动目标","让老板的目标成为团队、员工的目标","建立经营活动到管理洞察/干预的即时反馈机制","令预算不再失算","令预算不再失算","提升客户满意度","改变内部流程效率","建立或落地组织的文化（使命、愿景、价值观","如何建立质量管理体系","如何提升财务职能事前预测的准确度?","组织的绩效如何被监控、干预?"],
+                    关于人力资源效能: ["优化配置人力资源以支持业务目标的实现","科学设计薪酬与激励机制","精准招聘人才","解决空降高管过度期风险"],
+                    关于促变: ["促进跨部门协同，激发团队动力及担当","获得及时高效的数据支持决策","洞察我的市场机会在哪里","需要一场有实践、有创新、有认知构建产出又贴近业务的训练活动","引导高层战略协同","产品创新的群体智慧在哪里?","如何促进组织复原力","如何提升团队的共情力、协同精神"],
+                    关于组织问题精准的系统性诊断: ["希望了解组织目前可提升的空间具体有哪些?","组织有没有隐性的风险？具体是什么?","组织的成长性如何?","从组织能力看其未来的持续盈利能力"]
+                    }
+
+                    
+                    function makeSubmenu1(value) {
+                    if(value.length==0) document.getElementById("citySelect1").innerHTML = "<option></option>";
+                    else {
+                    var citiesOptions = "";
+                    for(cityId in citiesByState1[value]) {
+                    citiesOptions+="<option>"+citiesByState1[value][cityId]+"</option>";
+                    }
+                    document.getElementById("citySelect1").innerHTML = citiesOptions;
+                    }
+                    }
+                    function makeSubmenu2(value) {
+                    if(value.length==0) document.getElementById("citySelect2").innerHTML = "<option></option>";
+                    else {
+                    var citiesOptions = "";
+                    for(cityId in citiesByState2[value]) {
+                    citiesOptions+="<option>"+citiesByState2[value][cityId]+"</option>";
+                    }
+                    document.getElementById("citySelect2").innerHTML = citiesOptions;
+                    }
+                    }
+                    function makeSubmenu3(value) {
+                    if(value.length==0) document.getElementById("citySelect3").innerHTML = "<option></option>";
+                    else {
+                    var citiesOptions = "";
+                    for(cityId in citiesByState3[value]) {
+                    citiesOptions+="<option>"+citiesByState3[value][cityId]+"</option>";
+                    }
+                    document.getElementById("citySelect3").innerHTML = citiesOptions;
+                    }
+                    }
+
+
+                    // function displaySelected() { var country = document.getElementById("countrySelect").value;
+                    // var city = document.getElementById("citySelect").value;
+                    // alert(country+"\n"+city);
+                    // }
+                    function resetSelection() {
+                    document.getElementById("countrySelect").selectedIndex = 0;
+                    document.getElementById("citySelect").selectedIndex = 0;
+                    }
+
+
+                    </script>
+                    </head>
+                    <body onload="resetSelection()">
+                    <div class="col-md-3">
+                        <div class="form-group mb-30">
+                        <select name="question-one-cat" id="countrySelect" onchange="makeSubmenu1(this.value)" class="form-control">
+                            <option value="问题1未选择">问题1-类别</option>
+                            <option>关于系统性能力建设</option>
+                            <option>关于人力资源效能</option>
+                            <option>关于促变</option>
+                            <option>关于组织问题精准的系统性诊断</option>
+                        </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-9">
+                        <div class="form-group mb-30">
+                        <select name="question-one-detail" id="citySelect1" class="form-control">
+                            <option value="问题1未选择">详细问题</option>
+                            <option></option>
+                        </select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-group mb-30">
+                        <select name="question-two-cat" id="countrySelect" onchange="makeSubmenu2(this.value)" class="form-control">
+                            <option value="" disabled selected>问题2-类别</option>
+                            <option>关于系统性能力建设</option>
+                            <option>关于人力资源效能</option>
+                            <option>关于促变</option>
+                            <option>关于组织问题精准的系统性诊断</option>
+                        </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-9">
+                        <div class="form-group mb-30">
+                        <select name="question-two-detail" id="citySelect2" class="form-control">
+                            <option value="" disabled selected>详细问题</option>
+                            <option></option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group mb-30">
+                        <select name="question-three-cat" id="countrySelect" onchange="makeSubmenu3(this.value)" class="form-control">
+                            <option value="" disabled selected>问题3-类别</option>
+                            <option>关于系统性能力建设</option>
+                            <option>关于人力资源效能</option>
+                            <option>关于促变</option>
+                            <option>关于组织问题精准的系统性诊断</option>
+                        </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-9">
+                        <div class="form-group mb-30">
+                        <select name="question-three-detail" id="citySelect3" class="form-control">
+                            <option value="" disabled selected>详细问题</option>
+                            <option></option>
+                        </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-12">
+                        <div class="form-group mb-30">
+                          <textarea name="question-others" class="form-control" placeholder="其他"></textarea>
+                        </div>
+                      </div>
+    
+                      <div class="col-12 text-center">
+                        <!-- <button onclick="displaySelected()" class="btn dento-btn">显示我的选项</button> -->
+                        <button type="submit" class="btn dento-btn">提交</button>
+                      </div>
+                    
+
+                    </body>
+                    </html>
+                    <!-- End of condition selection -->
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+
+<br><br><br><br>
+{% endblock %}
