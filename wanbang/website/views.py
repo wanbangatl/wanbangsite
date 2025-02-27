@@ -1,6 +1,8 @@
 from idlelib.sidebar import LineNumbers
 
 from django.shortcuts import render
+from django.core.mail import send_mail
+
 
 # Create your views here.
 def home(request):
@@ -43,7 +45,7 @@ def contact(request):
             '来自：' + message_name + '的留言板信息',  # subject
             message + '\n电话号码：' + message_phone + '\n邮箱：' + message_email,  # message
             None,  # from email
-            ['crm@ubooster.cn'],  # to email
+            ['franco_lsc@163.com'],  # to email
         )
 
         return render(request, 'contact.html', {'message_name': message_name})
