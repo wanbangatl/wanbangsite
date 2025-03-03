@@ -36,6 +36,92 @@
     .quick-links-widget {
       margin-top: 40px; /* Adjust this value as needed */
     }
+    
+    /* Increase font size and spacing for navigation items */
+    .classynav ul li a {
+      font-size: 18px;
+      font-weight: 600;
+      padding: 0 20px; /* Increase horizontal spacing between items */
+      line-height: 40px; /* Match the height of the contact button */
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Add more horizontal space between nav items on desktop */
+    @media only screen and (min-width: 992px) {
+      .classynav ul li {
+        margin-right: 20px; /* Reduced spacing between nav items */
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      
+      .classynav ul li:last-child {
+        margin-right: 0; /* Remove margin from last item */
+      }
+      
+      /* Adjust the entire navigation bar layout */
+      #dentoNav {
+        display: flex;
+        align-items: center;
+        height: 85px; /* Match height with the logo */
+        position: relative;
+      }
+      
+      /* Make the menu take up appropriate space and center it */
+      .classy-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      
+      /* Center the navigation items horizontally */
+      .classy-nav-container .classynav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+      
+      /* Align the nav items vertically and center horizontally */
+      .classynav ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-bottom: 0;
+        width: auto;
+        padding: 0;
+      }
+      
+      /* Ensure Contact button is perfectly aligned with the navigation */
+      .booking-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        margin: 0;
+        z-index: 2; /* Ensure the button stays above other elements */
+      }
+      
+      /* Fix the vertical alignment of nav items */
+      .classynav ul li a {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Add extra space to push the navigation items to the center */
+      .nav-brand {
+        z-index: 2; /* Ensure the logo stays above other elements */
+      }
+    }
   </style>
 </head>
 
