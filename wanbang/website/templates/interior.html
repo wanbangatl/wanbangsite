@@ -44,7 +44,8 @@
         </div>
       </div>
 
-      <div class="row">
+      <!-- Blog posts container with custom styles for centering and horizontal scrolling -->
+      <div class="row blog-posts-container" style="display: flex; justify-content: center; overflow-x: auto; padding-bottom: 10px;">
         <!-- Single Blog Item -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="single-blog-item mb-100">
@@ -53,8 +54,8 @@
             </a>
             <!-- Blog Content -->
             <div class="blog-content">
-              <a href="/blog/blog_interior_sandy_springs.html" class="post-title" style="font-size: 1.25rem;">Small Space Optimization Solutions</a>
-              <p>Learn how to utilize limited space to create practical and aesthetically pleasing small living environments.</p>
+              <a href="/blog/blog_interior_sandy_springs.html" class="post-title" style="font-size: 1.25rem;">Modern Farmhouse in Sandy Springs</a>
+              <p>Look at our house redesign & remodel service.</p>
               <div class="post-meta">
                 <a href="/blog/blog_interior_sandy_springs.html"><i class="fa fa-comments"></i> Read More</a>
               </div>
@@ -163,4 +164,45 @@
   </section>
   <!-- ***** Services Area End ***** -->
 
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Ensure blog posts container centers items properly */
+  .blog-posts-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding-bottom: 15px; /* Add padding for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .blog-posts-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .blog-posts-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Ensure blog items maintain proper width */
+  .blog-posts-container .col-lg-4 {
+    flex: 0 0 auto;
+    min-width: 300px;
+    max-width: 350px;
+    margin: 0 15px;
+  }
+  
+  /* When there's only one blog post, center it */
+  @media (min-width: 992px) {
+    .blog-posts-container.single-post {
+      justify-content: center;
+    }
+  }
+</style>
 {% endblock %}
