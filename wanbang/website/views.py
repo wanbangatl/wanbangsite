@@ -1,9 +1,13 @@
 from idlelib.sidebar import LineNumbers
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import send_mail
 from django.http import Http404
+from django.template.exceptions import TemplateDoesNotExist
 
+# Add the Blog model if it doesn't exist
+class Blog:
+    objects = type('', (), {'get': lambda *args, **kwargs: None})()
 
 # Create your views here.
 def home(request):
@@ -100,40 +104,14 @@ def blog_list(request):
 
 
 def blog_detail(request, slug):
-    """
-    View function for individual blog posts
-    """
-    # Example (adjust according to your models):
-    # try:
-    #     post = BlogPost.objects.get(slug=slug)
-    # except BlogPost.DoesNotExist:
-    #     raise Http404("Blog post not found")
-    
-    return render(request, 'website/blog_detail.html', {
-        # 'post': post,
-        'title': 'Blog Post',  # You might want to use the actual post title here
-        'slug': slug
-    })
-
-
-def blog_detail(request, slug):
-    # For static html templates, we can use a direct template approach
-    if slug == 'blog_interior_sandy_springs.html':
-        return render(request, 'blog/blog_interior_sandy_springs.html')
-    
-    # For dynamic blog content from database (when implemented)
     try:
         blog = Blog.objects.get(slug=slug)
-        recent_blogs = Blog.objects.exclude(id=blog.id).order_by('-published_date')[:3]
-        context = {
-            'blog': blog,
-            'recent_blogs': recent_blogs
-        }
-        return render(request, 'blog/blog_detail.html', context)
-    except:
-        # Fall back to static template if available
-        template_name = f"blog/{slug}.html"
-        try:
-            return render(request, template_name)
-        except TemplateDoesNotExist:
-            raise Http404("Blog post not found")
+        template_name = f'blog/{slug}.html'
+        return render(request, template_name)
+    except TemplateDoesNotExist:
+        # Fallback to a generic template or redirect to home
+        return redirect('home')
+    except Exception as e:
+        # Handle other exceptions
+        print(f"Error in blog_detail: {e}")
+        return redirect('home')

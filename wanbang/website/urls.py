@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('', views.home, name = "home"),
@@ -31,10 +32,16 @@ urlpatterns = [
     # Blog URLs - removed duplicate with consistent naming
     path('blog/', views.blog_list, name='blog'),
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
-    path('blog/<slug:slug>.html', views.blog_detail, name='blog_detail_html'),
+    path('blog/<slug:slug>.html', views.blog_detail, name='blog_detail'),
+    
+    # Make sure hardcoded paths like 'blog/contact.html' don't exist
     
     # Special case for the Sandy Springs blog
     path('blog/blog_interior_sandy_springs.html', views.blog_detail, 
          {'slug': 'blog_interior_sandy_springs'}, name='blog_interior_sandy_springs'),
+    
+    # Redirect any attempts to access /blog/contact.html to the contact page
+    path('blog/contact.html', RedirectView.as_view(pattern_name='contact', permanent=True)),
+    path('contact/', views.contact, name='contact'),
 ]
 
