@@ -21,6 +21,22 @@
   <!-- Logo Adjustment Stylesheet -->
   <link rel="stylesheet" href="{% static 'website/css/logo-adjustment.css' %}">
 
+  <!-- Add custom styles for footer icons and alignment -->
+  <style>
+    .footer-contact i.icon_pin,
+    .footer-contact i.icon_mail {
+      color: #ffffff !important;
+    }
+    
+    .footer-contact p {
+      color: #ffffff !important;
+    }
+    
+    /* Add margin to the Quick Links section to move it down */
+    .quick-links-widget {
+      margin-top: 40px; /* Adjust this value as needed */
+    }
+  </style>
 </head>
 
 <body>
@@ -89,15 +105,15 @@
                 <ul id="nav">
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'consulting' %}">Interior RENOVATIONS</a></li>
-                  <li><a href="{% url 'workshop' %}">Exterior RENOVATIONS</a></li>
+                  <li><a href="{% url 'consulting' %}">Interior Remodel</a></li>
+                  <li><a href="{% url 'workshop' %}">Exterior Remodel</a></li>
                 </ul>
               </div>
               <!-- Nav End -->
             </div>
 
             <!-- Booking Now Button -->
-            <a href="./contact.html" class="btn dento-btn booking-btn">Contact</a>
+            <a href="./contact.html" class="btn dento-btn booking-btn">Contact US</a>
           </nav>
         </div>
       </div>
@@ -111,17 +127,17 @@
 {% endblock %}
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/footer_bg.jpg' %});">
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/footer_bg.jpg' %}); background-position: center 35%;">
     <div class="container">
       <div class="row">
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo1.png' %}" alt=""></a>
-            <p>Expert in Interior & Exterior Renovation</p>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/Wanbang_Logo_White.png' %}" alt="" style="max-height: 85px; width: auto;"></a>
+            <p>Revamp. Renew. Reimagine.</p>
             <div class="footer-contact">
-              <p><i class="icon_pin"></i>重庆市渝中区朝天门接圣街8号</p>
-              <p><i class="icon_mail"></i>crm@ubooster.cn</p>
+              <p><i class="icon_pin"></i>Atlanta, GA</p>
+              <p><i class="icon_mail"></i>crm_wanbang@gmail.com</p>
             </div>
           </div>
         </div>
@@ -150,7 +166,7 @@
 
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-8 col-lg">
-          <div class="single-footer-widget">
+          <div class="single-footer-widget quick-links-widget">
             <!-- Widget Title -->
             <h5 class="widget-title">Quick Links</h5>
 
@@ -159,8 +175,8 @@
               <ul class="quick-links">
                 <li><a href="{% url 'home' %}"><p>Home</p></a></li>
                 <li><a href="{% url 'about' %}"><p>About</p></a></li>
-                <li><a href="{% url 'consulting' %}"><p>Interior RENOVATIONS</p></a></li>
-                <li><a href="{% url 'workshop' %}"><p>Exterior RENOVATIONS</p></a></li>
+                <li><a href="{% url 'consulting' %}"><p>Interior Remodel</p></a></li>
+                <li><a href="{% url 'workshop' %}"><p>Exterior Remodel</p></a></li>
                 <li><a href="./contact.html"><p>Contact</p></a></li>
               </ul>
             </nav>
