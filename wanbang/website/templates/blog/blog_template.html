@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}{{ blog.title }}{% endblock %}
+{% block content %}
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/workdesk.png' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">项目详情</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> 主页</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'interior' %}">室内装修服务</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ blog.title }}</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Blog Details Area Start ***** -->
+  <section class="dento-blog-details-area mt-50">
+    <div class="container">
+      <div class="row">
+        <!-- Blog Details Content -->
+        <div class="col-12 col-lg-8">
+          <div class="blog-details-content">
+            <div class="post-content">
+              <h2 class="post-title">{{ blog.title }}</h2>
+              
+              <div class="post-meta">
+                <a href="#"><i class="fa fa-calendar"></i> {{ blog.published_date|date:"Y年m月d日" }}</a>
+                {% if blog.location %}<a href="#"><i class="fa fa-map-marker"></i> {{ blog.location }}</a>{% endif %}
+                {% if blog.category %}<a href="#"><i class="fa fa-tag"></i> {{ blog.category }}</a>{% endif %}
+              </div>
+              
+              <!-- 主图 -->
+              <div class="post-thumbnail mb-30">
+                {% if blog.featured_image %}
+                  <img src="{{ blog.featured_image.url }}" alt="{{ blog.title }}">
+                {% else %}
+                  <img src="{% static 'website/img/blog-img/project-detail.jpg' %}" alt="{{ blog.title }}">
+                {% endif %}
+              </div>
+              
+              <!-- 内容 -->
+              <div class="blog-content">
+                {{ blog.content|safe }}
+              </div>
+            </div>
+            
+            <!-- Post Share -->
+            <div class="post-share">
+              <h6>分享这个项目:</h6>
+              <div class="share-links">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-12 col-lg-4">
+          <div class="dento-sidebar">
+            <!-- Latest Posts -->
+            <div class="single-widget-area news-widget">
+              <h5 class="widget-title">最近项目</h5>
+              
+              {% for recent_blog in recent_blogs %}
+              <div class="single-news-item d-flex align-items-center">
+                <div class="news-thumbnail">
+                  {% if recent_blog.featured_image %}
+                    <img src="{{ recent_blog.featured_image.url }}" alt="{{ recent_blog.title }}">
+                  {% else %}
+                    <img src="{% static 'website/img/blog-img/project1-thumb.jpg' %}" alt="{{ recent_blog.title }}">
+                  {% endif %}
+                </div>
+                <div class="news-content">
+                  <a href="{% url 'blog_detail' recent_blog.slug %}">{{ recent_blog.title }}</a>
+                  <span>{{ recent_blog.published_date|date:"Y年m月d日" }}</span>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Blog Details Area End ***** -->
+{% endblock %}

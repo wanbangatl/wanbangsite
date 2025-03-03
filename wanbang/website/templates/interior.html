@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block title %} 组织能力建设 {% endblock %}
+{% block title %} Interior Remodeling Services {% endblock %}
 {% block content %}
 
 
   <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/workdesk.png' %});">
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/interior-banner.png' %});">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">组织能力建设</h2>
+          <h2 class="title">Interior Remodeling Services</h2>
         </div>
       </div>
     </div>
@@ -21,9 +21,9 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> 主页</a></li>
-              <li class="breadcrumb-item active" aria-current="page">服务与能力</li>
-              <li class="breadcrumb-item active" aria-current="page">组织能力建设</li>
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Our Services</li>
+              <li class="breadcrumb-item active" aria-current="page">Interior Remodeling</li>
             </ol>
           </nav>
         </div>
@@ -33,65 +33,84 @@
   <!-- ***** Breadcrumb Area End ***** -->
 
 
-  <!-- ****** About Us Area Start ******* -->
-  <section class="dento-about-us-area mt-50">
+  <!-- ***** Blog Posts Area Start ***** -->
+  <section class="dento-blog-area mb-70">
     <div class="container">
-      <div class="row align-items-center">
-        <!-- About Content -->
-        <div class="col-12 col-md-6">
-          <div class="about-us-content mb-50">
-            <!-- Section Heading -->
-            <div class="section-heading">
-              <h2>助⼒组织能⼒成长，实现企业绩效增长</h2>
-              <div class="line"></div>
-            </div>
-            <p>我们针对企业在发展过程中管理困境的个性化，为成长型公司量⾝配置的专家就像企业的外延敏捷团队，运⽤他们的丰富经验、专业深度、视野宽度，为企业提供兼具科学性、不可复制性和可操作性的综合管理⽅案。通过⼲预或辅导管理经营活动，为企业提升核⼼竞争⼒、减少资源错配浪费、驾驭经营管理风险。</p>
-
-            <!-- Single Skills Area -->
-            <!-- <div class="single-skills-area mt-30">
-              <h6>Experience Dentist</h6>
-              <div id="bar1" class="barfiller">
-                <span class="tip"></span>
-                <span class="fill" data-percentage="80"></span>
-              </div>
-            </div> -->
-
-            <!-- Single Skills Area -->
-            <!-- <div class="single-skills-area mt-30">
-              <h6>Modern Equipment</h6>
-              <div id="bar2" class="barfiller">
-                <span class="tip"></span>
-                <span class="fill" data-percentage="65"></span>
-              </div>
-            </div> -->
-
-            <!-- Single Skills Area -->
-            <!-- <div class="single-skills-area mt-30">
-              <h6>Friendly Staff</h6>
-              <div id="bar3" class="barfiller">
-                <span class="tip"></span>
-                <span class="fill" data-percentage="85"></span>
-              </div>
-            </div> -->
+      <div class="row">
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>Our Projects & Remodeling Inspiration</h2>
+            <div class="line"></div>
           </div>
         </div>
-        <!-- About Us Thumbnail -->
-        <div class="col-12 col-md-6">
-            <div class="about-us-thumbnail mb-50">
-                <img src="{% static 'website/img/core-img/surf.png' %}" alt="">
+      </div>
+
+      <div class="row">
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100">
+            <a href="#">
+              <img src="{% static 'website/img/blog-img/aboutu_bg.jpg' %}" alt="Small Space Renovation">
+            </a>
+            <!-- Blog Content -->
+            <div class="blog-content">
+              <a href="#" class="post-title">Small Space Optimization Solutions</a>
+              <p>Learn how to utilize limited space to create practical and aesthetically pleasing small living environments.</p>
+              <div class="post-meta">
+                <a href="#"><i class="fa fa-comments"></i> Read More</a>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100">
+            <a href="#">
+              <img src="{% static 'website/img/blog-img/kitchen.png' %}" alt="Kitchen Remodel">
+            </a>
+            <!-- Blog Content -->
+            <div class="blog-content">
+              <a href="#" class="post-title">Essential Kitchen Remodeling Guide</a>
+              <p>Modern kitchen design trends, material selection advice, and how to plan a successful kitchen renovation project.</p>
+              <div class="post-meta">
+                <a href="#"><i class="fa fa-comments"></i> Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100">
+            <a href="#">
+              <img src="{% static 'website/img/blog-img/eco.png' %}" alt="Eco-Friendly Remodeling">
+            </a>
+            <!-- Blog Content -->
+            <div class="blog-content">
+              <a href="#" class="post-title">Eco-Friendly Remodeling: Materials & Methods</a>
+              <p>Explore the advantages of eco-friendly remodeling materials and how to create a healthy, sustainable living environment.</p>
+              <div class="post-meta">
+                <a href="#"><i class="fa fa-comments"></i> Read More</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-
-
-
-
+  <!-- ***** Blog Posts Area End ***** -->
 
   <!-- ***** Services Area Start ***** -->
   <section class="dento-services-area mt-50 mb-50">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading text-center">
+          <h2>Interior Services</h2>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
 
@@ -101,21 +120,21 @@
                 <div class="icon--">
                 <img src="{% static 'website/img/core-img/one.png' %}" alt="">
                 </div>
-                <h6>组织诊断</h6>
-                <p align="left">盈利能力诊断/ 组织效率诊断/ 竞争力诊断/ 风险诊断/ 人力资本效能诊断</p>
+                <h6>Interior Design Consultation</h6>
+                <p align="left">Professional space planning / Style positioning / Color matching / Material selection / Budget assessment / 3D rendering design</p>
             </div>
-            </div>
+        </div>
 
-            <!-- Single Service Area -->
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="single-service--area text-center mb-50">
-                    <div class="icon--">
-                    <img src="{% static 'website/img/core-img/two.png' %}" alt="">
-                    </div>
-                    <h6>伙伴计划</h6>
-                    <p align="left">测评及发展计划/ 领导力发展/ 职能赋能/ 适应期协同</p>
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-service--area text-center mb-50">
+                <div class="icon--">
+                <img src="{% static 'website/img/core-img/two.png' %}" alt="">
                 </div>
-                </div>
+                <h6>Complete Home Renovation</h6>
+                <p align="left">Interior demolition / Plumbing and electrical renovation / Wall treatment / Flooring installation / Ceiling renovation / Overall construction management</p>
+            </div>
+        </div>
 
         <!-- Single Service Area -->
         <div class="col-12 col-sm-6 col-lg-4">
@@ -123,8 +142,8 @@
             <div class="icon--">
               <img src="{% static 'website/img/core-img/three.png' %}" alt="">
             </div>
-            <h6>客户满意度管理</h6>
-            <p align="left">客户体验地图/ 客户生命周期管理/ 客户需求洞察/ 客户沟通与反馈机制/ 客户满意度管理工具</p>
+            <h6>Kitchen & Bath Remodeling</h6>
+            <p align="left">Modern kitchen renovation / Custom cabinetry / Bathroom fixture updates / Waterproofing / Tile installation / Plumbing updates</p>
           </div>
         </div>
 
@@ -134,8 +153,8 @@
             <div class="icon--">
               <img src="{% static 'website/img/core-img/four.png' %}" alt="">
             </div>
-            <h6>质量管理</h6>
-            <p align="left">质量控制管理指标/ 质量回顾流程/ 质量管理成熟度评估/ 质量管理工具</p>
+            <h6>Custom Furniture</h6>
+            <p align="left">Wardrobe design and creation / Custom bookshelves / TV stand construction / Dining furniture customization / Bedroom furniture sets</p>
           </div>
         </div>
 
@@ -145,8 +164,8 @@
             <div class="icon--">
               <img src="{% static 'website/img/core-img/five.png' %}" alt="">
             </div>
-            <h6>提升人力资源效能</h6>
-            <p align="left">组织结构再造/ 招聘赋能/ 薪酬与激励/ 人才盘点/ 绩效管理</p>
+            <h6>Smart Home Installation</h6>
+            <p align="left">Smart lighting systems / Home automation / Security systems / Audio-visual entertainment systems / Smart climate control / Voice-controlled device integration</p>
           </div>
         </div>
 
@@ -156,48 +175,14 @@
             <div class="icon--">
               <img src="{% static 'website/img/core-img/six.png' %}" alt="">
             </div>
-            <h6>管理报告体系</h6>
-            <p align="left">跨地域发展中的企业，随着组织的日益壮大，信息流决定着决策效率、经营效率、市场应变效率等诸多关键。<br> 健康的管理报告体系，将经营活动与资源管理链接，赋能决策，促进跨职能协同。</p>
+            <h6>Commercial Space Renovation</h6>
+            <p align="left">Office renovations / Store design / Restaurant decoration / Conference room layout / Reception area transformation / Corporate image wall design</p>
           </div>
         </div>
-
-        <!-- Single Service Area -->
-        <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-service--area text-center mb-50">
-                <div class="icon--">
-                <img src="{% static 'website/img/core-img/seven.png' %}" alt="">
-                </div>
-                <h6>流程优化</h6>
-                <p align="left">科学的价值流创造资源利用优势，我们对每一个业务流程的持续优化都从价值识别开始，无止尽追求精益。它既是员工的行为最佳实践，更是组织资源管理的落地措施。</p>
-            </div>
-            </div>
-    
-            <!-- Single Service Area -->
-            <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-service--area text-center mb-50">
-                <div class="icon--">
-                <img src="{% static 'website/img/core-img/eight.png' %}" alt="">
-                </div>
-                <h6>预算管理体系</h6>
-                <p align="left">预算并非仅仅是一份财务报表，基于业务逻辑、市场竞争的预算假设，及与资源使用相关的流程设计等联动构成预算管理体系，您组织的管理成熟度、发展阶段、行业特性共同决定了适合您组织的预算管理体系。</p>
-            </div>
-            </div>
-    
-            <!-- Single Service Area -->
-            <div class="col-12 col-sm-6 col-lg-4">
-            <div class="single-service--area text-center mb-50">
-                <div class="icon--">
-                <img src="{% static 'website/img/core-img/nine.png' %}" alt="">
-                </div>
-                <h6>大数据战略及应用</h6>
-                <p align="left">数据资源是互联网时代的石油，而数据的庞大改变了商业竞争的性质。数据已经成为了企业生产、经营、战略等等几乎所有的经营活动所依赖的，不可或缺的信息，正确的大数据战略及应用可以帮助企业做出明智的商业决定。</p>
-            </div>
-            </div>
 
       </div>
     </div>
   </section>
   <!-- ***** Services Area End ***** -->
-
 
 {% endblock %}
