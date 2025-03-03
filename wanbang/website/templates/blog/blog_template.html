@@ -76,6 +76,13 @@
   </section>
   <!-- ***** Blog Details Area End ***** -->
   
+  <!-- Image Lightbox Modal - Added at template level -->
+  <div id="image-modal" class="lightbox-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="enlarged-image">
+    <div id="caption"></div>
+  </div>
+  
   <!-- Common blog styling -->
   <style>
     /* Markdown Content Styling */
@@ -138,7 +145,126 @@
         margin-bottom: 1.5rem;
       }
     }
+    
+    /* Lightbox Modal Styles - Added to base template */
+    .enlargeable {
+      cursor: pointer !important;
+    }
+    
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: auto;
+      max-width: 90%;
+      max-height: 85vh;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10001;
+    }
+    
+    .close-modal:hover {
+      color: #bbb;
+    }
+    
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+    }
   </style>
   
   {% block additional_styles %}{% endblock %}
+
+  <!-- Base image enlargement script -->
+  <script>
+  function initImageEnlargement() {
+    console.log("Initializing image enlargement");
+    
+    // Simple direct approach using vanilla JS
+    var modal = document.getElementById('image-modal');
+    var modalImg = document.getElementById('enlarged-image');
+    var captionText = document.getElementById('caption');
+    var closeBtn = document.getElementsByClassName('close-modal')[0];
+    
+    // Get all enlargeable images
+    var images = document.getElementsByClassName('enlargeable');
+    console.log("Found " + images.length + " enlargeable images");
+    
+    // Attach click handlers directly
+    for (var i = 0; i < images.length; i++) {
+      images[i].title = "Click to enlarge";
+      
+      // Direct click handler
+      images[i].onclick = function() {
+        console.log("Image clicked");
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      };
+    }
+    
+    // Close button click handler
+    if (closeBtn) {
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Allow scrolling again
+      };
+    }
+    
+    // Click outside to close
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Allow scrolling again
+      }
+    };
+    
+    // ESC key to close
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape" && modal.style.display === "block") {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Allow scrolling again
+      }
+    });
+  }
+
+  // Run when document is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    initImageEnlargement();
+  });
+  
+  // Fallback - try again when window is fully loaded
+  window.onload = function() {
+    initImageEnlargement();
+  };
+  </script>
+
+  {% block additional_scripts %}{% endblock %}
 {% endblock %}

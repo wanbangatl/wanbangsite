@@ -2,35 +2,35 @@
 
 {% load static %}
 
-{% block title %}Modern French Farmhouse in Sandy Springs{% endblock %}
+{% block title %}Modern Farmhouse in Sandy Springs{% endblock %}
 
-{% block blog_title %}Modern French Farmhouse in Sandy Springs{% endblock %}
-{% block breadcrumb_title %}Modern French Farmhouse{% endblock %}
+{% block blog_title %}Modern Farmhouse in Sandy Springs{% endblock %}
+{% block breadcrumb_title %}Modern Farmhouse{% endblock %}
 
 {% block blog_content %}
   <!-- Styled Section Title -->
   <div class="section-heading text-center mb-50">
-    <h2>Modern French Farmhouse</h2>
-    <p>Interior Design Transformation in Sandy Springs</p>
+    <h2>Modern Farmhouse</h2>
+    <p>Interior Design & Transformation in Sandy Springs</p>
     <div class="line"></div>
   </div>
   
   <div class="post-meta mb-30">
-    <a href="#"><i class="fa fa-calendar"></i> March 15, 2023</a>
+    <a href="#"><i class="fa fa-calendar"></i> July 15, 2024</a>
     <a href="#"><i class="fa fa-map-marker"></i> Sandy Springs, GA</a>
     <a href="#"><i class="fa fa-tag"></i> Residential</a>
   </div>
   
   <!-- Main Image -->
   <div class="post-thumbnail mb-30">
-    <img src="{% static 'website/img/blog-img/french-farmhouse-main.jpg' %}" alt="Modern French Farmhouse">
+    <img src="{% static 'website/img/blog-img/french-farmhouse-main.jpg' %}" alt="Modern Farmhouse" class="enlargeable" onclick="openModal(this)">
   </div>
   
   <!-- Introduction Section -->
   <div class="project-introduction mb-40">
     <div class="markdown-content">
       <h3>Project Overview</h3>
-      <p>This stunning French Farmhouse transformation in Sandy Springs showcases the perfect blend of rustic charm and modern elegance. Our clients desired a warm, inviting space that honored the traditional farmhouse aesthetic while incorporating contemporary elements for everyday living.</p>
+      <p>This stunning Modern Farmhouse transformation in Sandy Springs showcases the perfect blend of rustic charm and modern elegance. Our clients desired a warm, inviting space that honored the traditional farmhouse aesthetic while incorporating contemporary elements for everyday living.</p>
       <p>The project encompassed a complete interior redesign, focusing on the kitchen, living room, and master bedroom areas. Our team worked closely with the homeowners to select materials, finishes, and furnishings that reflected their personal style while creating a cohesive design narrative throughout the home.</p>
     </div>
   </div>
@@ -44,20 +44,48 @@
     
     <!-- Before/After Image Comparison -->
     <div class="before-after-container">
-      <div class="row">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <div class="comparison-image before-image">
-            <h5 class="text-center mb-2">Before</h5>
-            <img src="{% static 'website/img/blog-img/kitchen-before.jpg' %}" alt="Kitchen Before" class="img-fluid rounded">
+      <!-- First comparison set -->
+      <div class="comparison-set mb-4">
+        <div class="row">
+          <div class="col-12 mb-2">
+            <h5 class="text-center comparison-label">Before and After</h5>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="comparison-image after-image">
-            <h5 class="text-center mb-2">After</h5>
-            <img src="{% static 'website/img/blog-img/kitchen-after.jpg' %}" alt="Kitchen After" class="img-fluid rounded">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
           </div>
         </div>
       </div>
+      
+      <!-- Second comparison set -->
+      <div class="comparison-set">
+        <div class="row">
+          <div class="col-12 mb-2">
+            <h5 class="text-center comparison-label">Before and After</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <div class="comparison-description mt-3">
         <p>We removed the wall separating the kitchen from the dining area, installed new shaker-style cabinetry in a soft white finish, and added a large center island with a farmhouse sink. The custom hood vent and open shelving bring both functionality and style to the space.</p>
       </div>
@@ -73,22 +101,27 @@
     
     <!-- Before/After Image Comparison -->
     <div class="before-after-container">
-      <div class="row">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <div class="comparison-image before-image">
-            <h5 class="text-center mb-2">Before</h5>
-            <img src="{% static 'website/img/blog-img/living-before.jpg' %}" alt="Living Room Before" class="img-fluid rounded">
+      <div class="comparison-set">
+        <div class="row">
+          <div class="col-12 mb-2">
+            <h5 class="text-center comparison-label">Before and After</h5>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="comparison-image after-image">
-            <h5 class="text-center mb-2">After</h5>
-            <img src="{% static 'website/img/blog-img/living-after.jpg' %}" alt="Living Room After" class="img-fluid rounded">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/living-before.jpg' %}" alt="Living Room Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/living-after.jpg' %}" alt="Living Room After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
           </div>
         </div>
       </div>
       <div class="comparison-description mt-3">
-        <p>We brightened the space with a fresh neutral palette, added custom built-ins flanking the fireplace, and incorporated a mix of textures through carefully selected furnishings. The new French doors allow natural light to flood the space while connecting the indoors with the backyard patio.</p>
+        <p>We brightened the space with a fresh neutral palette, added custom built-ins flanking the fireplace, and incorporated a mix of textures through carefully selected furnishings. The new doors allow natural light to flood the space while connecting the indoors with the backyard patio.</p>
       </div>
     </div>
   </div>
@@ -102,17 +135,22 @@
     
     <!-- Before/After Image Comparison -->
     <div class="before-after-container">
-      <div class="row">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <div class="comparison-image before-image">
-            <h5 class="text-center mb-2">Before</h5>
-            <img src="{% static 'website/img/blog-img/bedroom-before.jpg' %}" alt="Bedroom Before" class="img-fluid rounded">
+      <div class="comparison-set">
+        <div class="row">
+          <div class="col-12 mb-2">
+            <h5 class="text-center comparison-label">Before and After</h5>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="comparison-image after-image">
-            <h5 class="text-center mb-2">After</h5>
-            <img src="{% static 'website/img/blog-img/bedroom-after.jpg' %}" alt="Bedroom After" class="img-fluid rounded">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/bedroom-before.jpg' %}" alt="Bedroom Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/bedroom-after.jpg' %}" alt="Bedroom After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
           </div>
         </div>
       </div>
@@ -147,7 +185,7 @@
       <div class="col-md-6 mb-4">
         <div class="detail-item">
           <h5><i class="fa fa-lightbulb-o"></i> Design Elements</h5>
-          <p>French farmhouse, modern rustic, natural textures, neutral palette with subtle color accents</p>
+          <p>Modern farmhouse, modern rustic, natural textures, neutral palette with subtle color accents</p>
         </div>
       </div>
     </div>
@@ -156,9 +194,17 @@
   <!-- Conclusion -->
   <div class="conclusion mt-5 mb-4">
     <h3>Final Thoughts</h3>
-    <p>This Sandy Springs French Farmhouse renovation perfectly demonstrates how thoughtful interior design can transform a dated home into a timeless, inviting space that honors traditional aesthetics while meeting modern needs. The homeowners now enjoy a home that feels both fresh and familiar, with carefully considered details that make everyday living more beautiful and functional.</p>
+    <p>This Sandy Springs Modern Farmhouse renovation perfectly demonstrates how thoughtful interior design can transform a dated home into a timeless, inviting space that honors traditional aesthetics while meeting modern needs. The homeowners now enjoy a home that feels both fresh and familiar, with carefully considered details that make everyday living more beautiful and functional.</p>
     <p>If you're inspired by this transformation and would like to discuss your own home renovation project, please <a href="{% url 'contact' %}">contact us</a> for a consultation.</p>
   </div>
+
+  <!-- Image Lightbox Modal -->
+  <div id="image-modal" class="lightbox-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="enlarged-image">
+    <div id="caption"></div>
+  </div>
+
 {% endblock %}
 
 {% block recent_projects %}
@@ -218,7 +264,7 @@
     .section-heading .line {
       width: 70px;
       height: 4px;
-      background-color: #00c4eb;
+      background-color: #1F2A47;
       margin: 20px auto 0;
     }
     
@@ -228,5 +274,327 @@
       font-size: 24px;
       margin-bottom: 15px;
     }
+    
+    /* Enhanced horizontal before-after image styles */
+    .before-after-container {
+      margin: 25px 0 40px;
+    }
+    
+    .comparison-set {
+      margin-bottom: 35px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 25px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .comparison-label {
+      font-weight: 600;
+      color: #1F2A47;
+      position: relative;
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+    
+    .comparison-label:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background-color: #1F2A47;
+    }
+    
+    .comparison-image {
+      position: relative;
+      padding-bottom: 66%; /* Approximately 3:2 aspect ratio (matches your dimensions) */
+      height: 0;
+      overflow: hidden;
+    }
+    
+    .comparison-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border-radius: 4px;
+    }
+    
+    .comparison-image img:hover {
+      transform: scale(1.02);
+    }
+    
+    .before-image:after {
+      content: "Before";
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      background-color: rgba(31, 42, 71, 0.8);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 2;
+    }
+    
+    .after-image:after {
+      content: "After";
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      background-color: rgba(68, 146, 76, 0.8);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      z-index: 2;
+    }
+    
+    @media (min-width: 768px) {
+      .before-after-container .row {
+        align-items: center;
+      }
+      
+      /* Adjust the padding to maintain the desired aspect ratio on larger screens */
+      .comparison-image {
+        padding-bottom: 66%;
+      }
+      
+      /* Reduce the gap between before and after images */
+      .row [class*="col-"] {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      
+      .comparison-set {
+        padding: 25px 15px;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .before-after-container {
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      /* Make the container a bit wider on larger screens */
+      .comparison-set {
+        padding: 30px 20px;
+      }
+      
+      .comparison-description {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* Image Lightbox Styles */
+    .enlargeable {
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    
+    .enlargeable:hover {
+      opacity: 0.9;
+    }
+    
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: auto;
+      max-width: 90%;
+      max-height: 85vh;
+      animation: zoom 0.3s ease-in-out;
+    }
+    
+    @keyframes zoom {
+      from {transform: scale(0.95); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 10001;
+    }
+    
+    .close-modal:hover {
+      color: #bbb;
+    }
+    
+    #caption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+    }
+
+    /* Explicitly mark images as clickable with a subtle icon */
+    .enlargeable {
+      cursor: zoom-in !important;
+      position: relative;
+    }
+    
+    .enlargeable::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>');
+      background-size: cover;
+      opacity: 0.7;
+      z-index: 5;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      transition: opacity 0.2s;
+    }
+    
+    .enlargeable:hover::after {
+      opacity: 1;
+    }
   </style>
+{% endblock %}
+
+{% block additional_scripts %}
+<script>
+  // Wait for the document to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM Content loaded - initializing image enlargement");
+    
+    // Get the modal elements
+    const modal = document.getElementById('image-modal');
+    
+    // Check if modal exists
+    if (!modal) {
+      console.error("Modal element not found!");
+      return;
+    }
+    
+    const modalImg = document.getElementById('enlarged-image');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.getElementsByClassName('close-modal')[0];
+    
+    // Get all images with class "enlargeable"
+    const images = document.getElementsByClassName('enlargeable');
+    console.log("Found", images.length, "enlargeable images");
+    
+    // Add click event to all images
+    for (let i = 0; i < images.length; i++) {
+      images[i].onclick = function() {
+        console.log("Image clicked:", this.alt);
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+        
+        // Prevent scrolling on the body when modal is open
+        document.body.style.overflow = "hidden";
+      };
+      
+      // Add visual indicator that image is clickable
+      images[i].title = "Click to enlarge";
+    }
+    
+    // Close modal when clicking on the X
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+      // Re-enable scrolling
+      document.body.style.overflow = "";
+    };
+    
+    // Close modal when clicking outside the image
+    modal.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+        // Re-enable scrolling
+        document.body.style.overflow = "";
+      }
+    };
+    
+    // Close modal when pressing ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape" && modal.style.display === "block") {
+        modal.style.display = "none";
+        // Re-enable scrolling
+        document.body.style.overflow = "";
+      }
+    });
+    
+    console.log("Image enlargement initialization complete");
+  });
+
+  // Direct function to open the modal - will work even if other scripts fail
+  function openModal(img) {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('enlarged-image');
+    const captionText = document.getElementById('caption');
+    
+    if (!modal || !modalImg) {
+      console.error("Modal elements not found!");
+      alert("Image viewer is not available. Please try again later.");
+      return;
+    }
+    
+    console.log("Opening modal for image:", img.alt);
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+  }
+  
+  // Add click handlers using inline attribute as backup
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add direct span to indicate image is enlargeable
+    const images = document.querySelectorAll('.enlargeable');
+    images.forEach(img => {
+      // Make sure the image has the onclick attribute
+      if (!img.hasAttribute('onclick')) {
+        img.setAttribute('onclick', 'openModal(this)');
+      }
+    });
+    
+    // Explicitly add click handler to close button
+    const closeBtn = document.querySelector('.close-modal');
+    if (closeBtn) {
+      closeBtn.onclick = function() {
+        document.getElementById('image-modal').style.display = "none";
+        document.body.style.overflow = ""; // Allow scrolling again
+      };
+    }
+  });
+</script>
 {% endblock %}
