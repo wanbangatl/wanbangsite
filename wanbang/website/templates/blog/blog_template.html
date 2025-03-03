@@ -5,7 +5,7 @@
 {% block content %}
 
   <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/workdesk.png' %});">
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/blog-img/blog-bg.jpg' %}); background-position: center 58%;">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -146,7 +146,7 @@
       }
     }
     
-    /* Lightbox Modal Styles - Added to base template */
+    /* Lightbox Modal Styles - Updated for better centering */
     .enlargeable {
       cursor: pointer !important;
     }
@@ -155,21 +155,24 @@
       display: none;
       position: fixed;
       z-index: 10000;
-      padding-top: 50px;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
+      overflow: hidden;
       background-color: rgba(0,0,0,0.9);
+      /* Use flexbox for perfect centering */
+      align-items: center;
+      justify-content: center;
     }
     
     .modal-content {
-      margin: auto;
+      /* Center the image with flexbox instead of margins */
       display: block;
-      width: auto;
       max-width: 90%;
       max-height: 85vh;
+      object-fit: contain; /* Maintain aspect ratio */
+      margin: 0; /* Remove auto margins */
     }
     
     .close-modal {
@@ -182,6 +185,7 @@
       cursor: pointer;
       transition: 0.3s;
       z-index: 10001;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7); /* Make it more visible on any background */
     }
     
     .close-modal:hover {
@@ -189,13 +193,15 @@
     }
     
     #caption {
-      margin: auto;
-      display: block;
-      width: 80%;
-      max-width: 700px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
       text-align: center;
-      color: #ccc;
+      color: #fff;
       padding: 10px 0;
+      background-color: rgba(0,0,0,0.3);
+      font-size: 16px;
+      font-weight: 500;
     }
   </style>
   
@@ -223,7 +229,7 @@
       // Direct click handler
       images[i].onclick = function() {
         console.log("Image clicked");
-        modal.style.display = "block";
+        modal.style.display = "flex"; // Changed from "block" to "flex"
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
         document.body.style.overflow = "hidden"; // Prevent scrolling

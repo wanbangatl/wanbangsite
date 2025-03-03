@@ -54,12 +54,12 @@
         <div class="row">
           <div class="col-md-6 mb-3 mb-md-0">
             <div class="comparison-image before-image">
-              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+              <img src="{% static 'website/img/blog-img/ss-kitchen-before-1.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
             </div>
           </div>
           <div class="col-md-6">
             <div class="comparison-image after-image">
-              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+              <img src="{% static 'website/img/blog-img/ss-kitchen-before-1.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
             </div>
           </div>
         </div>
@@ -68,19 +68,30 @@
       <!-- Second comparison set -->
       <div class="comparison-set">
         <div class="row">
-          <div class="col-12 mb-2">
-            <h5 class="text-center comparison-label">Before and After</h5>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-md-6 mb-3 mb-md-0">
             <div class="comparison-image before-image">
-              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+              <img src="{% static 'website/img/blog-img/ss-kitchen-before-2.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
             </div>
           </div>
           <div class="col-md-6">
             <div class="comparison-image after-image">
-              <img src="{% static 'website/img/blog-img/kitchen-before-1.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+              <img src="{% static 'website/img/blog-img/ss-kitchen-before-2.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Third comparison set -->
+      <div class="comparison-set">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/ss-kitchen-before-3.jpeg' %}" alt="Kitchen Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/ss-kitchen-before-3.jpeg' %}" alt="Kitchen After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
             </div>
           </div>
         </div>
@@ -110,12 +121,40 @@
         <div class="row">
           <div class="col-md-6 mb-3 mb-md-0">
             <div class="comparison-image before-image">
-              <img src="{% static 'website/img/blog-img/living-before.jpg' %}" alt="Living Room Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+              <img src="{% static 'website/img/blog-img/ss-livingroom-before-1.jpeg' %}" alt="Living Room Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
             </div>
           </div>
           <div class="col-md-6">
             <div class="comparison-image after-image">
-              <img src="{% static 'website/img/blog-img/living-after.jpg' %}" alt="Living Room After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+              <img src="{% static 'website/img/blog-img/ss-livingroom-before-1.jpeg' %}" alt="Living Room After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comparison-set">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/ss-livingroom-before-2.jpeg' %}" alt="Living Room Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/ss-livingroom-before-2.jpeg' %}" alt="Living Room After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comparison-set">
+        <div class="row">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="comparison-image before-image">
+              <img src="{% static 'website/img/blog-img/ss-livingroom-before-3.jpeg' %}" alt="Living Room Before" class="img-fluid rounded enlargeable" onclick="openModal(this)">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-image after-image">
+              <img src="{% static 'website/img/blog-img/ss-livingroom-before-3.jpeg' %}" alt="Living Room After" class="img-fluid rounded enlargeable" onclick="openModal(this)">
             </div>
           </div>
         </div>
@@ -398,10 +437,11 @@
       }
     }
 
-    /* Image Lightbox Styles */
+    /* Image Lightbox Styles - Updated for better centering */
     .enlargeable {
-      cursor: pointer;
+      cursor: zoom-in !important;
       transition: opacity 0.3s ease;
+      position: relative;
     }
     
     .enlargeable:hover {
@@ -412,27 +452,31 @@
       display: none;
       position: fixed;
       z-index: 10000;
-      padding-top: 50px;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
+      overflow: hidden;
       background-color: rgba(0,0,0,0.9);
       transition: opacity 0.3s ease;
+      /* Use flexbox for perfect centering */
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
     
     .modal-content {
-      margin: auto;
+      /* Center the image with flexbox instead of margins */
       display: block;
-      width: auto;
       max-width: 90%;
       max-height: 85vh;
       animation: zoom 0.3s ease-in-out;
+      object-fit: contain; /* Maintain aspect ratio */
+      margin: 0; /* Remove auto margins */
     }
     
     @keyframes zoom {
-      from {transform: scale(0.95); opacity: 0;}
+      from {transform: scale(0.9); opacity: 0;}
       to {transform: scale(1); opacity: 1;}
     }
     
@@ -446,6 +490,7 @@
       cursor: pointer;
       transition: 0.3s;
       z-index: 10001;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7); /* Make it more visible on any background */
     }
     
     .close-modal:hover {
@@ -453,21 +498,19 @@
     }
     
     #caption {
-      margin: auto;
-      display: block;
-      width: 80%;
-      max-width: 700px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
       text-align: center;
-      color: #ccc;
+      color: #fff;
       padding: 10px 0;
+      background-color: rgba(0,0,0,0.3); /* Semi-transparent background */
+      font-size: 16px;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
 
-    /* Explicitly mark images as clickable with a subtle icon */
-    .enlargeable {
-      cursor: zoom-in !important;
-      position: relative;
-    }
-    
+    /* Magnifying glass icon */
     .enlargeable::after {
       content: "";
       position: absolute;
@@ -517,7 +560,7 @@
     for (let i = 0; i < images.length; i++) {
       images[i].onclick = function() {
         console.log("Image clicked:", this.alt);
-        modal.style.display = "block";
+        modal.style.display = "flex";
         modalImg.src = this.src;
         captionText.innerHTML = this.alt;
         
@@ -547,7 +590,7 @@
     
     // Close modal when pressing ESC key
     document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape" && modal.style.display === "block") {
+      if (event.key === "Escape" && modal.style.display === "flex") {
         modal.style.display = "none";
         // Re-enable scrolling
         document.body.style.overflow = "";
@@ -570,7 +613,7 @@
     }
     
     console.log("Opening modal for image:", img.alt);
-    modal.style.display = "block";
+    modal.style.display = "flex";
     modalImg.src = img.src;
     captionText.innerHTML = img.alt;
     document.body.style.overflow = "hidden"; // Prevent scrolling
