@@ -18,6 +18,8 @@
   
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+  <!-- Logo Adjustment Stylesheet -->
+  <link rel="stylesheet" href="{% static 'website/css/logo-adjustment.css' %}">
 
 </head>
 
@@ -65,7 +67,9 @@
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/wanbang_logo_white.png' %}" alt=""></a>
+            <a class="nav-brand" href="{% url 'home' %}">
+              <img src="{% static 'website/img/core-img/wanbang_logo_white.png' %}" alt="Wanbang LLC Logo" style="max-height: 85px; width: auto;">
+            </a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -84,43 +88,9 @@
               <div class="classynav">
                 <ul id="nav">
                   <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'about' %}">About</a>
-                    <!-- <ul class="dropdown">
-{#                      <li><a href="{% url 'home' %}">- 主页</a></li>#}
-                      <li><a href="about.html">- 关于我们</a></li>
-                      <li><a href="service.html">- 服务</a></li>
-                      <li><a href="pricing.html">- 定价</a></li>
-                      <li><a href="blog.html">- 博客</a></li>
-                      <li><a href="blog-details.html">- 博客细节</a></li>
-                      <li><a href="contact.html">- 联系我们</a></li>
-                      <li><a href="#">- Dropdown</a>
-                        <ul class="dropdown">
-                          <li><a href="#">- Dropdown Item</a></li>
-                          <li><a href="#">- Dropdown Item</a>
-                            <ul class="dropdown">
-                              <li><a href="#">- Even Dropdown</a></li>
-                              <li><a href="#">- Even Dropdown</a></li>
-                              <li><a href="#">- Even Dropdown</a></li>
-                              <li><a href="#">- Even Dropdown</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="#">- Dropdown Item</a></li>
-                          <li><a href="#">- Dropdown Item</a></li>
-                        </ul>
-                      </li>
-                    </ul> -->
-                  </li>
-{#                  <li><a href="{% url 'about' %}">Our Work</a></li>#}
-                  <li><a href="#">WHAT We Do</a>
-                    <ul class="dropdown">
-                        <li><a href="{% url 'consulting' %}">Interior RENOVATIONS</a></li>
-                        <li><a href="{% url 'workshop' %}">Exterior RENOVATIONS</a></li>
-                    </ul>
-                  </li>
-{#                  <li><a href="{% url 'aboutu' %}">BLOG</a>#}
-{#                  <li><a href="{% url 'expert' %}">专家与实践</a></li>#}
-{#                  <li><a href="{% url 'insight' %}">思考与洞察</a></li>#}
-                  <!-- <li><a href="./contact.html">联系我们</a></li> -->
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="{% url 'consulting' %}">Interior RENOVATIONS</a></li>
+                  <li><a href="{% url 'workshop' %}">Exterior RENOVATIONS</a></li>
                 </ul>
               </div>
               <!-- Nav End -->
@@ -148,7 +118,7 @@
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
             <a href="./index.html" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo1.png' %}" alt=""></a>
-            <p>为企业的核⼼竞争⼒提供价值</p>
+            <p>Expert in Interior & Exterior Renovation</p>
             <div class="footer-contact">
               <p><i class="icon_pin"></i>重庆市渝中区朝天门接圣街8号</p>
               <p><i class="icon_mail"></i>crm@ubooster.cn</p>
@@ -182,17 +152,16 @@
         <div class="col-12 col-sm-8 col-lg">
           <div class="single-footer-widget">
             <!-- Widget Title -->
-            <h5 class="widget-title">快速链接</h5>
+            <h5 class="widget-title">Quick Links</h5>
 
             <!-- Quick Links Nav -->
             <nav>
               <ul class="quick-links">
-                <li><a href="{% url 'aboutu' %}"><p>关于您</p></a></li>
-                <li><a href="{% url 'about' %}"><p>关于我们</p></a></li>
-                <li><a href="{% url 'consulting' %}"><p>组织能力建设</p></a></li>
-                <li><a href="{% url 'workshop' %}"><p>促变工作坊</p></a></li>
-                <li><a href="{% url 'expert' %}"><p>专家与实践</p></a></li>
-                <li><a href="{% url 'about' %}"><p>思考与洞察</p></a></li>
+                <li><a href="{% url 'home' %}"><p>Home</p></a></li>
+                <li><a href="{% url 'about' %}"><p>About</p></a></li>
+                <li><a href="{% url 'consulting' %}"><p>Interior RENOVATIONS</p></a></li>
+                <li><a href="{% url 'workshop' %}"><p>Exterior RENOVATIONS</p></a></li>
+                <li><a href="./contact.html"><p>Contact</p></a></li>
               </ul>
             </nav>
           </div>

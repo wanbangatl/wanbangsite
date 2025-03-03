@@ -1,0 +1,35 @@
+/* Logo size adjustment in header */
+.nav-brand img {
+    max-height: 85px; /* Significantly increased from 65px */
+    width: auto;
+    margin-top: -10px; /* Adjusted vertical positioning */
+    margin-bottom: -10px; /* Balance the header height */
+}
+
+/* Adjust the header area to accommodate larger logo */
+.main-header-area {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Ensure navigation items align vertically with the larger logo */
+.classynav ul li a {
+    padding: 0 15px;
+    line-height: 65px; /* Adjusted to match logo height */
+}
+
+/* Adjust booking button vertical alignment */
+.booking-btn {
+    margin-top: 8px;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 767px) {
+    .nav-brand img {
+        max-height: 60px; /* Increased from 50px */
+    }
+    
+    .classynav ul li a {
+        line-height: normal;
+    }
+}
