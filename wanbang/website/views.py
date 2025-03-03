@@ -79,3 +79,13 @@ def aboutu(request):
 
     else:
         return render(request, 'aboutu.html', {})
+
+
+def blog_template(request):
+    return render(request, 'blog/blog_template.html')
+
+
+def blog_detail(request, slug):
+    # In a real application, you might fetch a blog post based on the slug
+    # For now, we'll just render the blog template
+    return render(request, 'blog/blog_template.html', {'slug': slug})

@@ -9,7 +9,7 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">项目详情</h2>
+          <h2 class="title">Project Details</h2>
         </div>
       </div>
     </div>
@@ -20,8 +20,8 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> 主页</a></li>
-              <li class="breadcrumb-item"><a href="{% url 'interior' %}">室内装修服务</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'interior' %}">Interior Design Services</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ blog.title }}</li>
             </ol>
           </nav>
@@ -42,12 +42,12 @@
               <h2 class="post-title">{{ blog.title }}</h2>
               
               <div class="post-meta">
-                <a href="#"><i class="fa fa-calendar"></i> {{ blog.published_date|date:"Y年m月d日" }}</a>
+                <a href="#"><i class="fa fa-calendar"></i> {{ blog.published_date|date:"M d, Y" }}</a>
                 {% if blog.location %}<a href="#"><i class="fa fa-map-marker"></i> {{ blog.location }}</a>{% endif %}
                 {% if blog.category %}<a href="#"><i class="fa fa-tag"></i> {{ blog.category }}</a>{% endif %}
               </div>
               
-              <!-- 主图 -->
+              <!-- Main Image -->
               <div class="post-thumbnail mb-30">
                 {% if blog.featured_image %}
                   <img src="{{ blog.featured_image.url }}" alt="{{ blog.title }}">
@@ -56,7 +56,7 @@
                 {% endif %}
               </div>
               
-              <!-- 内容 -->
+              <!-- Content -->
               <div class="blog-content">
                 {{ blog.content|safe }}
               </div>
@@ -64,7 +64,7 @@
             
             <!-- Post Share -->
             <div class="post-share">
-              <h6>分享这个项目:</h6>
+              <h6>Share this project:</h6>
               <div class="share-links">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -80,7 +80,7 @@
           <div class="dento-sidebar">
             <!-- Latest Posts -->
             <div class="single-widget-area news-widget">
-              <h5 class="widget-title">最近项目</h5>
+              <h5 class="widget-title">Recent Projects</h5>
               
               {% for recent_blog in recent_blogs %}
               <div class="single-news-item d-flex align-items-center">
@@ -93,7 +93,7 @@
                 </div>
                 <div class="news-content">
                   <a href="{% url 'blog_detail' recent_blog.slug %}">{{ recent_blog.title }}</a>
-                  <span>{{ recent_blog.published_date|date:"Y年m月d日" }}</span>
+                  <span>{{ recent_blog.published_date|date:"M d, Y" }}</span>
                 </div>
               </div>
               {% endfor %}

@@ -26,5 +26,7 @@ urlpatterns = [
     path('exterior.html', views.exterior, name = "exterior"),
     path('aboutu.html', views.aboutu, name = "aboutu"),
     path('insight.html', views.insight, name = "insight"),
+    path('blog_template.html', views.blog_template, name = "blog_template"),
+    path('blog/<slug:slug>.html', views.blog_detail, name = "blog_detail"),
 ]
 
