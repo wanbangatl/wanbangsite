@@ -13,12 +13,12 @@ def about(request):
     return render(request, 'about.html', {})
 
 
-def workshop(request):
-    return render(request, 'workshop.html', {})
+def exterior(request):
+    return render(request, 'exterior.html', {})
 
 
-def consulting(request):
-    return render(request, 'consulting.html', {})
+def interior(request):
+    return render(request, 'interior.html', {})
 
 
 def expert(request):

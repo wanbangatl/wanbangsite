@@ -22,8 +22,8 @@ urlpatterns = [
     path('about.html', views.about, name = "about"),
     path('contact.html', views.contact, name = "contact"),
     path('expert.html', views.expert, name = "expert"),
-    path('consulting.html', views.consulting, name = "consulting"),
-    path('workshop.html', views.workshop, name = "workshop"),
+    path('interior.html', views.interior, name = "interior"),
+    path('exterior.html', views.exterior, name = "exterior"),
     path('aboutu.html', views.aboutu, name = "aboutu"),
     path('insight.html', views.insight, name = "insight"),
 ]
