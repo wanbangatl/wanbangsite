@@ -1,7 +1,8 @@
 from idlelib.sidebar import LineNumbers
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
+from django.http import Http404
 
 
 # Create your views here.
@@ -85,7 +86,54 @@ def blog_template(request):
     return render(request, 'blog/blog_template.html')
 
 
+def blog_list(request):
+    """
+    View function for the blog listing page
+    """
+    # Get all blog posts or implement pagination if needed
+    # Example (adjust according to your models):
+    # blog_posts = BlogPost.objects.all().order_by('-date_published')
+    return render(request, 'website/blog.html', {
+        # 'blog_posts': blog_posts,
+        'title': 'Blog',
+    })
+
+
 def blog_detail(request, slug):
-    # In a real application, you might fetch a blog post based on the slug
-    # For now, we'll just render the blog template
-    return render(request, 'blog/blog_template.html', {'slug': slug})
+    """
+    View function for individual blog posts
+    """
+    # Example (adjust according to your models):
+    # try:
+    #     post = BlogPost.objects.get(slug=slug)
+    # except BlogPost.DoesNotExist:
+    #     raise Http404("Blog post not found")
+    
+    return render(request, 'website/blog_detail.html', {
+        # 'post': post,
+        'title': 'Blog Post',  # You might want to use the actual post title here
+        'slug': slug
+    })
+
+
+def blog_detail(request, slug):
+    # For static html templates, we can use a direct template approach
+    if slug == 'blog_interior_sandy_springs.html':
+        return render(request, 'blog/blog_interior_sandy_springs.html')
+    
+    # For dynamic blog content from database (when implemented)
+    try:
+        blog = Blog.objects.get(slug=slug)
+        recent_blogs = Blog.objects.exclude(id=blog.id).order_by('-published_date')[:3]
+        context = {
+            'blog': blog,
+            'recent_blogs': recent_blogs
+        }
+        return render(request, 'blog/blog_detail.html', context)
+    except:
+        # Fall back to static template if available
+        template_name = f"blog/{slug}.html"
+        try:
+            return render(request, template_name)
+        except TemplateDoesNotExist:
+            raise Http404("Blog post not found")

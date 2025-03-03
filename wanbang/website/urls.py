@@ -27,6 +27,14 @@ urlpatterns = [
     path('aboutu.html', views.aboutu, name = "aboutu"),
     path('insight.html', views.insight, name = "insight"),
     path('blog_template.html', views.blog_template, name = "blog_template"),
-    path('blog/<slug:slug>.html', views.blog_detail, name = "blog_detail"),
+    
+    # Blog URLs - removed duplicate with consistent naming
+    path('blog/', views.blog_list, name='blog'),
+    path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
+    path('blog/<slug:slug>.html', views.blog_detail, name='blog_detail_html'),
+    
+    # Special case for the Sandy Springs blog
+    path('blog/blog_interior_sandy_springs.html', views.blog_detail, 
+         {'slug': 'blog_interior_sandy_springs'}, name='blog_interior_sandy_springs'),
 ]
 

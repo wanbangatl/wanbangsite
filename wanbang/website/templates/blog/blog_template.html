@@ -9,7 +9,7 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">Project Details</h2>
+          <h2 class="title">{% block blog_title %}Project Details{% endblock %}</h2>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
               <li class="breadcrumb-item"><a href="{% url 'interior' %}">Interior Design Services</a></li>
-              <li class="breadcrumb-item active" aria-current="page">{{ blog.title }}</li>
+              <li class="breadcrumb-item active" aria-current="page">{% block breadcrumb_title %}Project Detail{% endblock %}</li>
             </ol>
           </nav>
         </div>
@@ -39,38 +39,9 @@
         <div class="col-12 col-lg-8">
           <div class="blog-details-content">
             <div class="post-content">
-              <h2 class="post-title">{{ blog.title }}</h2>
-              
-              <div class="post-meta">
-                <a href="#"><i class="fa fa-calendar"></i> {{ blog.published_date|date:"M d, Y" }}</a>
-                {% if blog.location %}<a href="#"><i class="fa fa-map-marker"></i> {{ blog.location }}</a>{% endif %}
-                {% if blog.category %}<a href="#"><i class="fa fa-tag"></i> {{ blog.category }}</a>{% endif %}
-              </div>
-              
-              <!-- Main Image -->
-              <div class="post-thumbnail mb-30">
-                {% if blog.featured_image %}
-                  <img src="{{ blog.featured_image.url }}" alt="{{ blog.title }}">
-                {% else %}
-                  <img src="{% static 'website/img/blog-img/project-detail.jpg' %}" alt="{{ blog.title }}">
-                {% endif %}
-              </div>
-              
-              <!-- Content -->
-              <div class="blog-content">
-                {{ blog.content|safe }}
-              </div>
-            </div>
-            
-            <!-- Post Share -->
-            <div class="post-share">
-              <h6>Share this project:</h6>
-              <div class="share-links">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-pinterest"></i></a>
-              </div>
+              {% block blog_content %}
+              <!-- Content will be filled by the extending template -->
+              {% endblock %}
             </div>
           </div>
         </div>
@@ -82,21 +53,21 @@
             <div class="single-widget-area news-widget">
               <h5 class="widget-title">Recent Projects</h5>
               
-              {% for recent_blog in recent_blogs %}
-              <div class="single-news-item d-flex align-items-center">
-                <div class="news-thumbnail">
-                  {% if recent_blog.featured_image %}
-                    <img src="{{ recent_blog.featured_image.url }}" alt="{{ recent_blog.title }}">
-                  {% else %}
-                    <img src="{% static 'website/img/blog-img/project1-thumb.jpg' %}" alt="{{ recent_blog.title }}">
-                  {% endif %}
-                </div>
-                <div class="news-content">
-                  <a href="{% url 'blog_detail' recent_blog.slug %}">{{ recent_blog.title }}</a>
-                  <span>{{ recent_blog.published_date|date:"M d, Y" }}</span>
+              {% block recent_projects %}
+              <!-- Recent projects will be filled here -->
+              {% endblock %}
+            </div>
+            
+            <!-- Contact Information Widget -->
+            <div class="single-widget-area contact-widget mt-5">
+              <h5 class="widget-title">Start Your Project</h5>
+              
+              <div class="contact-widget-content">
+                <p>Ready to transform your space? Our team is here to help bring your vision to life.</p>
+                <div class="contact-btn">
+                  <a href="{% url 'contact' %}" class="btn dento-btn">Schedule a Consultation</a>
                 </div>
               </div>
-              {% endfor %}
             </div>
           </div>
         </div>
@@ -104,4 +75,70 @@
     </div>
   </section>
   <!-- ***** Blog Details Area End ***** -->
+  
+  <!-- Common blog styling -->
+  <style>
+    /* Markdown Content Styling */
+    .markdown-content h1, .markdown-content h2, .markdown-content h3, 
+    .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .markdown-content p {
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+    
+    .markdown-content ul, .markdown-content ol {
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+    }
+    
+    .markdown-content li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Comparison Images */
+    .comparison-image img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .before-image h5, .after-image h5 {
+      background-color: rgba(0,0,0,0.03);
+      padding: 5px;
+      border-radius: 4px;
+    }
+    
+    .comparison-description {
+      background-color: rgba(0,0,0,0.02);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    
+    /* Project Details */
+    .detail-item {
+      background-color: rgba(0,0,0,0.02);
+      padding: 15px;
+      border-radius: 8px;
+      height: 100%;
+    }
+    
+    .detail-item h5 {
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    
+    /* Mobile Adjustments */
+    @media (max-width: 767px) {
+      .comparison-image {
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+  
+  {% block additional_styles %}{% endblock %}
 {% endblock %}

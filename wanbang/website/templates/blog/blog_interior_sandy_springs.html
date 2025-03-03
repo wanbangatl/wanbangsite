@@ -1,0 +1,232 @@
+{% extends 'blog/blog_template.html' %}
+
+{% load static %}
+
+{% block title %}Modern French Farmhouse in Sandy Springs{% endblock %}
+
+{% block blog_title %}Modern French Farmhouse in Sandy Springs{% endblock %}
+{% block breadcrumb_title %}Modern French Farmhouse{% endblock %}
+
+{% block blog_content %}
+  <!-- Styled Section Title -->
+  <div class="section-heading text-center mb-50">
+    <h2>Modern French Farmhouse</h2>
+    <p>Interior Design Transformation in Sandy Springs</p>
+    <div class="line"></div>
+  </div>
+  
+  <div class="post-meta mb-30">
+    <a href="#"><i class="fa fa-calendar"></i> March 15, 2023</a>
+    <a href="#"><i class="fa fa-map-marker"></i> Sandy Springs, GA</a>
+    <a href="#"><i class="fa fa-tag"></i> Residential</a>
+  </div>
+  
+  <!-- Main Image -->
+  <div class="post-thumbnail mb-30">
+    <img src="{% static 'website/img/blog-img/french-farmhouse-main.jpg' %}" alt="Modern French Farmhouse">
+  </div>
+  
+  <!-- Introduction Section -->
+  <div class="project-introduction mb-40">
+    <div class="markdown-content">
+      <h3>Project Overview</h3>
+      <p>This stunning French Farmhouse transformation in Sandy Springs showcases the perfect blend of rustic charm and modern elegance. Our clients desired a warm, inviting space that honored the traditional farmhouse aesthetic while incorporating contemporary elements for everyday living.</p>
+      <p>The project encompassed a complete interior redesign, focusing on the kitchen, living room, and master bedroom areas. Our team worked closely with the homeowners to select materials, finishes, and furnishings that reflected their personal style while creating a cohesive design narrative throughout the home.</p>
+    </div>
+  </div>
+  
+  <!-- Kitchen Transformation Section -->
+  <div class="content-section mb-5">
+    <h3 class="section-heading mb-3">Kitchen Transformation</h3>
+    <div class="section-text mb-4">
+      <p>The kitchen underwent the most dramatic transformation, evolving from a dated, closed-off space to an open, airy gathering spot for family and friends.</p>
+    </div>
+    
+    <!-- Before/After Image Comparison -->
+    <div class="before-after-container">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="comparison-image before-image">
+            <h5 class="text-center mb-2">Before</h5>
+            <img src="{% static 'website/img/blog-img/kitchen-before.jpg' %}" alt="Kitchen Before" class="img-fluid rounded">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="comparison-image after-image">
+            <h5 class="text-center mb-2">After</h5>
+            <img src="{% static 'website/img/blog-img/kitchen-after.jpg' %}" alt="Kitchen After" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+      <div class="comparison-description mt-3">
+        <p>We removed the wall separating the kitchen from the dining area, installed new shaker-style cabinetry in a soft white finish, and added a large center island with a farmhouse sink. The custom hood vent and open shelving bring both functionality and style to the space.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Living Room Transformation Section -->
+  <div class="content-section mb-5">
+    <h3 class="section-heading mb-3">Living Room Redesign</h3>
+    <div class="section-text mb-4">
+      <p>The living room called for a balance between comfort and sophistication, where family could gather comfortably while still maintaining an elegant aesthetic.</p>
+    </div>
+    
+    <!-- Before/After Image Comparison -->
+    <div class="before-after-container">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="comparison-image before-image">
+            <h5 class="text-center mb-2">Before</h5>
+            <img src="{% static 'website/img/blog-img/living-before.jpg' %}" alt="Living Room Before" class="img-fluid rounded">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="comparison-image after-image">
+            <h5 class="text-center mb-2">After</h5>
+            <img src="{% static 'website/img/blog-img/living-after.jpg' %}" alt="Living Room After" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+      <div class="comparison-description mt-3">
+        <p>We brightened the space with a fresh neutral palette, added custom built-ins flanking the fireplace, and incorporated a mix of textures through carefully selected furnishings. The new French doors allow natural light to flood the space while connecting the indoors with the backyard patio.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Master Bedroom Transformation Section -->
+  <div class="content-section mb-5">
+    <h3 class="section-heading mb-3">Master Bedroom Sanctuary</h3>
+    <div class="section-text mb-4">
+      <p>The master bedroom was reimagined as a serene retreat, emphasizing comfort without sacrificing style.</p>
+    </div>
+    
+    <!-- Before/After Image Comparison -->
+    <div class="before-after-container">
+      <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0">
+          <div class="comparison-image before-image">
+            <h5 class="text-center mb-2">Before</h5>
+            <img src="{% static 'website/img/blog-img/bedroom-before.jpg' %}" alt="Bedroom Before" class="img-fluid rounded">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="comparison-image after-image">
+            <h5 class="text-center mb-2">After</h5>
+            <img src="{% static 'website/img/blog-img/bedroom-after.jpg' %}" alt="Bedroom After" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+      <div class="comparison-description mt-3">
+        <p>A soft color palette with layers of textiles creates warmth, while the custom headboard and statement lighting add character. We installed new hardwood flooring and added architectural details like the shiplap accent wall to enhance the farmhouse aesthetic.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project Details Section -->
+  <div class="project-details mt-5">
+    <h3>Project Details</h3>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="detail-item">
+          <h5><i class="fa fa-calendar"></i> Timeline</h5>
+          <p>12 weeks from concept to completion</p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="detail-item">
+          <h5><i class="fa fa-th-list"></i> Materials Used</h5>
+          <p>White oak flooring, Benjamin Moore paint, custom cabinetry, quartz countertops, brass fixtures</p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="detail-item">
+          <h5><i class="fa fa-exclamation-triangle"></i> Challenges</h5>
+          <p>Working within the existing footprint while creating an open concept flow</p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="detail-item">
+          <h5><i class="fa fa-lightbulb-o"></i> Design Elements</h5>
+          <p>French farmhouse, modern rustic, natural textures, neutral palette with subtle color accents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Conclusion -->
+  <div class="conclusion mt-5 mb-4">
+    <h3>Final Thoughts</h3>
+    <p>This Sandy Springs French Farmhouse renovation perfectly demonstrates how thoughtful interior design can transform a dated home into a timeless, inviting space that honors traditional aesthetics while meeting modern needs. The homeowners now enjoy a home that feels both fresh and familiar, with carefully considered details that make everyday living more beautiful and functional.</p>
+    <p>If you're inspired by this transformation and would like to discuss your own home renovation project, please <a href="{% url 'contact' %}">contact us</a> for a consultation.</p>
+  </div>
+{% endblock %}
+
+{% block recent_projects %}
+  <div class="single-news-item d-flex align-items-center">
+    <div class="news-thumbnail">
+      <img src="{% static 'website/img/blog-img/project1-thumb.jpg' %}" alt="Contemporary Buckhead Condo">
+    </div>
+    <div class="news-content">
+      <a href="#">Contemporary Buckhead Condo</a>
+      <span>January 28, 2023</span>
+    </div>
+  </div>
+  
+  <div class="single-news-item d-flex align-items-center">
+    <div class="news-thumbnail">
+      <img src="{% static 'website/img/blog-img/project2-thumb.jpg' %}" alt="Midtown Loft Renovation">
+    </div>
+    <div class="news-content">
+      <a href="#">Midtown Loft Renovation</a>
+      <span>February 10, 2023</span>
+    </div>
+  </div>
+  
+  <div class="single-news-item d-flex align-items-center">
+    <div class="news-thumbnail">
+      <img src="{% static 'website/img/blog-img/project3-thumb.jpg' %}" alt="Coastal-Inspired Alpharetta Home">
+    </div>
+    <div class="news-content">
+      <a href="#">Coastal-Inspired Alpharetta Home</a>
+      <span>March 2, 2023</span>
+    </div>
+  </div>
+{% endblock %}
+
+{% block additional_styles %}
+  <style>
+    /* Section Heading Styles */
+    .section-heading {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .section-heading h2 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: capitalize;
+      line-height: 1.2;
+    }
+    
+    .section-heading p {
+      font-size: 16px;
+      color: #707070;
+      margin-bottom: 0;
+    }
+    
+    .section-heading .line {
+      width: 70px;
+      height: 4px;
+      background-color: #00c4eb;
+      margin: 20px auto 0;
+    }
+    
+    /* Sandy Springs specific styling */
+    .content-section h3 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  </style>
+{% endblock %}
