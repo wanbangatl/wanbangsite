@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% block title %} 促变工作坊 {% endblock %}
+{% block title %} Exterior Remodeling Services {% endblock %}
 {% block content %}
 
 
   <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/workdesk.png' %});">
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/interior-banner.png' %}); background-position: center 60%">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
-          <h2 class="title">促变工作坊</h2>
+          <h2 class="title">Exterior Remodeling Services</h2>
         </div>
       </div>
     </div>
@@ -21,9 +21,8 @@
         <div class="col-12">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> 主页</a></li>
-              <li class="breadcrumb-item active" aria-current="page">服务与能力</li>
-              <li class="breadcrumb-item active" aria-current="page">促变工作坊</li>
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Exterior Remodeling Services</li>
             </ol>
           </nav>
         </div>
@@ -33,179 +32,177 @@
   <!-- ***** Breadcrumb Area End ***** -->
 
 
-  <!-- ****** About Us Area Start ******* -->
-  <section class="dento-about-us-area mt-50">
+  <!-- ***** Blog Posts Area Start ***** -->
+  <section class="dento-blog-area section-padding-100-0">
     <div class="container">
-      <div class="row align-items-center">
-        <!-- About Content -->
-        <div class="col-12 col-md-6">
-          <div class="about-us-content mb-50">
-            <!-- Section Heading -->
-            <div class="section-heading">
-                <h2>开启一场行为对话...</h2>
-                <div class="line"></div>
-              </div>
-            <p>英国科学哲学家迈克尔·波拉尼（Michael Polanyi）潜心研究认知论，于1964年提出“波拉尼悖论”：“人类所知远胜于其所能言传，即人知道的大于他知道自己所知道的。”
-                <br><br>
-                “如果每个人的想法一样，则没人在思考。”  - 本杰明·富兰克林
-                <br><br><br>
-                <strong> 我们的工作坊持续探索个体及团队的动力引擎，助力您基于特定目的下的组织能力促变。 </strong>
-            </p>
+      <div class="row">
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>Our Projects & Remodeling Inspiration</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Single Skills Area -->
-            <!-- <div class="single-skills-area mt-30">
-              <h6>Experience Dentist</h6>
-              <div id="bar1" class="barfiller">
-                <span class="tip"></span>
-                <span class="fill" data-percentage="80"></span>
+      <!-- Blog posts container with custom styles for centering and horizontal scrolling -->
+      <div class="row blog-posts-container" style="display: flex; justify-content: center; overflow-x: auto; padding-bottom: 10px;">
+        <!-- Single Blog Item -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-blog-item mb-100">
+            <a href="/blog/blog_interior_sandy_springs.html">
+              <img src="{% static 'website/img/blog-img/ss-main.jpg' %}" alt="Small Space Renovation">
+            </a>
+            <!-- Blog Content -->
+            <div class="blog-content">
+              <a href="/blog/blog_interior_sandy_springs.html" class="post-title" style="font-size: 1.25rem;">Modern Farmhouse in Sandy Springs</a>
+              <p>Look at our house redesign & remodel service.</p>
+              <div class="post-meta">
+                <a href="/blog/blog_interior_sandy_springs.html"><i class="fa fa-comments"></i> Read More</a>
               </div>
-            </div> -->
-
-            <!-- Single Skills Area -->
-            <!-- <div class="single-skills-area mt-30">
-              <h6>Modern Equipment</h6>
-              <div id="bar2" class="barfiller">
-                <span class="tip"></span>
-                <span class="fill" data-percentage="65"></span>
-              </div>
-            </div> -->
-
-            <!-- Single Skills Area -->
-            <!-- <div class="single-skills-area mt-30">
-              <h6>Friendly Staff</h6>
-              <div id="bar3" class="barfiller">
-                <span class="tip"></span>
-                <span class="fill" data-percentage="85"></span>
-              </div>
-            </div> -->
+            </div>
           </div>
         </div>
 
-        <div class="col-12 col-md-1"></div>
-
-        <!-- About Us Thumbnail -->
-        <div class="col-12 col-md-5">
-            <div class="about-us-thumbnail mb-50">
-                <img src="{% static 'website/img/core-img/workshop_goal.png' %}" alt="">
-            </div>
-        </div>
       </div>
     </div>
   </section>
+  <!-- ***** Blog Posts Area End ***** -->
 
-  <section class="dento-about-us-area mt-50">
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <link rel="stylesheet" href="{% static 'website/css/style3.css' %}">
-      </head>
-      <body>
-        <div class="container">
-            <div class="carousel">
-                <input type="radio" name="slides" checked="checked" id="slide-1">
-                <input type="radio" name="slides" id="slide-2">
-                <input type="radio" name="slides" id="slide-3">
-                <input type="radio" name="slides" id="slide-4">
-                <input type="radio" name="slides" id="slide-5">
-                <input type="radio" name="slides" id="slide-6">
-                <ul class="carousel__slides">
-                    <li class="carousel__slide">
-                        <figure>
-                            <video width="740" height="494" controls>
-                                <source src="{% static 'website/img/video/lego.mp4' %}" type="video/mp4">
-                              Your browser does not support the video tag.
-                            </video>
-                            <figcaption>
-                                <img src="{% static 'website/img/core-img/workshop_idea.png' %}" alt="">
-                                <br>
-                                <!-- <span class="credit">Photo: Tim Marshall</span> -->
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carousel__slide">
-                        <figure>
-                            <div>
-                                <img src="{% static 'website/img/core-img/workshop_p2.png' %}" alt="">
-                            </div>
-                            <figcaption>
-                                <img src="{% static 'website/img/core-img/workshop_idea.png' %}" alt="">
-                                <br>
-                                <!-- <span class="credit">Photo: Christian Joudrey</span> -->
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carousel__slide">
-                        <figure>
-                            <div>
-                                <img src="{% static 'website/img/core-img/workshop_p3.png' %}" alt="">
-                            </div>
-                            <figcaption>
-                                <img src="{% static 'website/img/core-img/workshop_idea.png' %}" alt="">
-                                <br>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carousel__slide">
-                        <figure>
-                            <div>
-                                <img src="{% static 'website/img/core-img/workshop_p4.png' %}" alt="">
-                            </div>
-                            <figcaption>
-                                <img src="{% static 'website/img/core-img/workshop_idea.png' %}" alt="">
-                                <br>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carousel__slide">
-                        <figure>
-                            <div>
-                                <img src="{% static 'website/img/core-img/workshop_p5.png' %}" alt="">
-                            </div>
-                            <figcaption>
-                                <img src="{% static 'website/img/core-img/workshop_idea.png' %}" alt="">
-                                <br>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="carousel__slide">
-                        <figure>
-                            <div>
-                                <img src="{% static 'website/img/core-img/workshop_p6.png' %}" alt="">
-                            </div>
-                            <figcaption>
-                                <img src="{% static 'website/img/core-img/workshop_idea.png' %}" alt="">
-                                <br>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul>
-                <ul class="carousel__thumbnails">
-                    <li>
-                        <label for="slide-1"><img src="{% static 'website/img/core-img/video_e1.png' %}" alt=""></label>
-                    </li>
-                    <li>
-                        <label for="slide-2"><img src="{% static 'website/img/core-img/workshop_p2.png' %}" alt=""></label>
-                    </li>
-                    <li>
-                        <label for="slide-3"><img src="{% static 'website/img/core-img/workshop_p3.png' %}"alt=""></label>
-                    </li>
-                    <li>
-                        <label for="slide-4"><img src="{% static 'website/img/core-img/workshop_p4.png' %}" alt=""></label>
-                    </li>
-                    <li>
-                        <label for="slide-5"><img src="{% static 'website/img/core-img/workshop_p5.png' %}" alt=""></label>
-                    </li>
-                    <li>
-                        <label for="slide-6"><img src="{% static 'website/img/core-img/workshop_p6.png' %}" alt=""></label>
-                    </li>
-                </ul>
+  <!-- ***** Services Area Start ***** -->
+  <section class="dento-services-area section-padding-100-0 bg-light">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-heading text-center">
+          <h2>Exterior Services</h2>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-service--area mb-50">
+                <div class="service-icon-heading-wrapper">
+                  <div class="icon" style="text-align: center">
+                    <i class="fa fa-paint-brush" aria-hidden="true" style="font-size: 30px;"></i>
+                  </div>
+                  <h6 style="text-align: center; display: block; width: 100%;">Exterior Painting</h6>
+                </div>
+                <p align="left">Professional house painting / Weather-resistant coatings / Color consultation / Trim & detail work / Surface preparation & repair / Deck & fence staining</p>
             </div>
         </div>
-</body>
-    </html>
-    </section>
-      
 
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-service--area mb-50">
+                <div class="service-icon-heading-wrapper">
+                  <div class="icon" style="text-align: center">
+                    <i class="fa fa-leaf" aria-hidden="true" style="font-size: 30px;"></i>
+                  </div>
+                  <h6 style="text-align: center; display: block; width: 100%;">Landscape & Yard Work</h6>
+                </div>
+                <p align="left">Complete landscape design / Garden installation / Lawn maintenance / Tree trimming & removal / Irrigation systems / Mulching & seasonal planting</p>
+            </div>
+        </div>
 
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area mb-50">
+            <div class="service-icon-heading-wrapper">
+              <div class="icon" style="text-align: center">
+                <i class="fa fa-home" aria-hidden="true" style="font-size: 30px;"></i>
+              </div>
+              <h6 style="text-align: center; display: block; width: 100%;">Siding & Exterior Finishes</h6>
+            </div>
+            <p align="left">Vinyl siding installation / Fiber cement siding / Stone & brick veneer / Exterior trim work / Weather protection / Insulation upgrades</p>
+          </div>
+        </div>
 
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area mb-50">
+            <div class="service-icon-heading-wrapper">
+              <div class="icon" style="text-align: center">
+                <i class="fa fa-tint" aria-hidden="true" style="font-size: 30px;"></i>
+              </div>
+              <h6 style="text-align: center; display: block; width: 100%;">Gutters & Drainage</h6>
+            </div>
+            <p align="left">Seamless gutter installation / Gutter guards / Downspout configuration / Drainage solutions / Water management systems / Foundation protection</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area mb-50">
+            <div class="service-icon-heading-wrapper">
+              <div class="icon" style="text-align: center">
+                <i class="fa fa-sun-o" aria-hidden="true" style="font-size: 30px;"></i>
+              </div>
+              <h6 style="text-align: center; display: block; width: 100%;">Decks & Outdoor Living</h6>
+            </div>
+            <p align="left">Custom deck building / Patio installation / Pergolas & gazebos / Outdoor kitchens / Fire pit areas / Porches & screened spaces</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area mb-50">
+            <div class="service-icon-heading-wrapper">
+              <div class="icon" style="text-align: center">
+                <i class="fa fa-shield" aria-hidden="true" style="font-size: 30px;"></i>
+              </div>
+              <h6 style="text-align: center; display: block; width: 100%;">Roofing & Exterior Protection</h6>
+            </div>
+            <p align="left">Roof installation & repair / Skylight installation / Chimney repair / Soffit & fascia work / Weather sealing / Storm damage restoration</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Services Area End ***** -->
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Ensure blog posts container centers items properly */
+  .blog-posts-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 auto;
+    padding-bottom: 15px; /* Add padding for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .blog-posts-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .blog-posts-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  /* Ensure blog items maintain proper width */
+  .blog-posts-container .col-lg-4 {
+    flex: 0 0 auto;
+    min-width: 300px;
+    max-width: 350px;
+    margin: 0 15px;
+  }
+  
+  /* When there's only one blog post, center it */
+  @media (min-width: 992px) {
+    .blog-posts-container.single-post {
+      justify-content: center;
+    }
+  }
+</style>
 {% endblock %}
