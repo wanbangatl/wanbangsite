@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import send_mail
 from django.http import Http404
 from django.template.exceptions import TemplateDoesNotExist
+from django.conf import settings
 
 # Add the Blog model if it doesn't exist
 class Blog:
@@ -39,22 +40,68 @@ def insight(request):
 
 
 def contact(request):
-    if request.method == 'POST':
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
-        message_phone = request.POST['message-phone']
-        message = request.POST['message']
-
-        # send an email
-        send_mail(
-            '来自：' + message_name + '的留言板信息',  # subject
-            message + '\n电话号码：' + message_phone + '\n邮箱：' + message_email,  # message
-            None,  # from email
-            ['franco_lsc@163.com'],  # to email
-        )
-
-        return render(request, 'contact.html', {'message_name': message_name})
-
+    if request.method == "POST":
+        # Form validation
+        message_name = request.POST.get('message-name', '').strip()
+        message_email = request.POST.get('message-email', '').strip()
+        message_phone = request.POST.get('message-phone', '').strip()
+        message = request.POST.get('message', '').strip()
+        
+        # Basic validation
+        errors = {}
+        if not message_name:
+            errors['name'] = 'Name is required'
+        if not message_email:
+            errors['email'] = 'Email is required'
+        if not message:
+            errors['message'] = 'Message is required'
+            
+        if errors:
+            return render(request, 'contact.html', {
+                'errors': errors,
+                'form_data': {
+                    'name': message_name,
+                    'email': message_email,
+                    'phone': message_phone,
+                    'message': message
+                }
+            })
+        
+        # Send email
+        email_subject = f"Contact Form Submission from {message_name}"
+        email_body = f"""
+        You have received a new message from the contact form:
+        
+        Name: {message_name}
+        Email: {message_email}
+        Phone: {message_phone}
+        
+        Message:
+        {message}
+        """
+        
+        try:
+            send_mail(
+                email_subject, 
+                email_body, 
+                settings.EMAIL_HOST_USER,
+                [settings.EMAIL_HOST_USER],  # Send to the same email address that's sending
+                fail_silently=False,
+            )
+            return render(request, 'contact.html', {'message_name': message_name, 'success': True})
+        except Exception as e:
+            import logging
+            logger = logging.getLogger(__name__)
+            logger.error(f"Email sending failed: {str(e)}")
+            return render(request, 'contact.html', {
+                'error': 'Failed to send email. Please try again later.',
+                'form_data': {
+                    'name': message_name,
+                    'email': message_email,
+                    'phone': message_phone,
+                    'message': message
+                }
+            })
     else:
         return render(request, 'contact.html', {})
 

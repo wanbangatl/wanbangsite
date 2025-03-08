@@ -69,18 +69,26 @@
                 {% csrf_token %}
               <div class="row">
                 <div class="col-lg-4">
-                  <input type="text" name="message-name" class="form-control mb-30" placeholder="Name">
+                  <input type="text" name="message-name" class="form-control mb-30 {% if errors.name %}is-invalid{% endif %}" 
+                    placeholder="Name" value="{{ form_data.name|default:'' }}">
+                  {% if errors.name %}<div class="invalid-feedback">{{ errors.name }}</div>{% endif %}
                 </div>
                 <div class="col-lg-4">
-                  <input type="email" name="message-email" class="form-control mb-30" placeholder="Email">
+                  <input type="email" name="message-email" class="form-control mb-30 {% if errors.email %}is-invalid{% endif %}" 
+                    placeholder="Email" value="{{ form_data.email|default:'' }}">
+                  {% if errors.email %}<div class="invalid-feedback">{{ errors.email }}</div>{% endif %}
                 </div>
                 <div class="col-lg-4">
-                  <input type="phone" name="message-phone" class="form-control mb-30" placeholder="Phone Number">
+                  <input type="phone" name="message-phone" class="form-control mb-30" 
+                    placeholder="Phone Number" value="{{ form_data.phone|default:'' }}">
                 </div>
                 <div class="col-12">
-                  <textarea name="message" class="form-control mb-30" placeholder="Messasge"></textarea>
+                  <textarea name="message" class="form-control mb-30 {% if errors.message %}is-invalid{% endif %}" 
+                    placeholder="Message">{{ form_data.message|default:'' }}</textarea>
+                  {% if errors.message %}<div class="invalid-feedback">{{ errors.message }}</div>{% endif %}
                 </div>
                 <div class="col-12">
+                  {% if error %}<div class="alert alert-danger mb-3">{{ error }}</div>{% endif %}
                   <button type="submit" class="btn dento-btn">Send Messsage</button>
                 </div>
               </div>
