@@ -24,7 +24,8 @@
   <!-- Add custom styles for footer icons and alignment -->
   <style>
     .footer-contact i.icon_pin,
-    .footer-contact i.icon_mail {
+    .footer-contact i.icon_mail,
+    .footer-contact i.icon_phone {
       color: #ffffff !important;
     }
     
@@ -122,6 +123,112 @@
         z-index: 2; /* Ensure the logo stays above other elements */
       }
     }
+    
+    /* Fix spacing in top header content */
+    .top-header-content {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .top-header-content a {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 25px; /* Use consistent left margin */
+    }
+    
+    .top-header-content a i {
+      margin-right: 5px;
+      width: 14px;
+      text-align: center;
+      display: inline-block;
+    }
+    
+    /* Ensure equal width between items for more consistent spacing */
+    .top-header-content a span {
+      white-space: nowrap;
+    }
+
+    /* Override the default styles from style.css for top header content links */
+    .top-header-area .top-header-content a {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      color: #707070;
+      margin-left: 20px;
+      padding: 0 5px; /* Add padding for better touch targets */
+    }
+    
+    .top-header-area .top-header-content a:first-child {
+      margin-left: 0; /* Remove margin from first item */
+    }
+    
+    .top-header-area .top-header-content a i {
+      color: #1f2a47;
+      margin-right: 5px;
+      width: 15px; /* Fixed width for all icons */
+      text-align: center;
+      font-size: 14px; /* Consistent icon size */
+    }
+    
+    /* Ensure equal width between items for more consistent spacing */
+    .top-header-area .top-header-content a span {
+      white-space: nowrap;
+      font-weight: 500; /* Make text slightly bolder */
+    }
+    
+    /* Add responsive styles for small screens */
+    @media only screen and (max-width: 767px) {
+      .top-header-area .top-header-content a {
+        margin-left: 10px; /* Smaller spacing on mobile */
+        padding: 0 3px;
+      }
+    }
+
+    /* Fix spacing in top header content - more aggressive override */
+    .top-header-area .top-header-content {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
+    
+    /* Reset all margins and set specific, consistent spacing */
+    .top-header-area .top-header-content a {
+      display: inline-flex !important;
+      align-items: center !important;
+      margin: 0 !important;
+      margin-left: 30px !important;
+      padding: 0 !important;
+      position: relative;
+      font-size: 12px;
+    }
+    
+    .top-header-area .top-header-content a:first-child {
+      margin-left: 0 !important;
+    }
+    
+    .top-header-area .top-header-content a i {
+      color: #1f2a47 !important;
+      margin-right: 6px !important;
+      width: 15px !important;
+      text-align: center !important;
+      display: inline-block !important;
+      font-size: 14px !important;
+    }
+    
+    .top-header-area .top-header-content a span {
+      white-space: nowrap !important;
+      font-weight: 500 !important;
+    }
+    
+    /* Add responsive styles for small screens */
+    @media only screen and (max-width: 767px) {
+      .top-header-area .top-header-content a {
+        margin-left: 15px !important;
+      }
+    }
   </style>
 </head>
 
@@ -143,7 +250,8 @@
           <div class="col-12 col-md-12 col-lg-12 text-right">
             <div class="top-header-content">
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Atlanta, GA"><i class="fa fa-map-marker"></i> <span>Atlanta, GA</span></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="wanbangatl@gmail.com"><i class="fa fa-envelope"></i> <span>wanbangatl@gmail.com</span></a>
+              <a href="tel:+16266786173" data-toggle="tooltip" data-placement="bottom" title="(626) 678-6173"><i class="fa fa-phone"></i> <span>(626) 678-6173</span></a>
+              <a href="mailto:wanbangatl@gmail.com" data-toggle="tooltip" data-placement="bottom" title="wanbangatl@gmail.com"><i class="fa fa-envelope"></i> <span>wanbangatl@gmail.com</span></a>
             </div>
           </div>
           <!-- Top Header Social Info -->
@@ -223,7 +331,8 @@
             <p>Revamp. Renew. Reimagine.</p>
             <div class="footer-contact">
               <p><i class="icon_pin"></i>Atlanta, GA</p>
-              <p><i class="icon_mail"></i>wanbangatl@gmail.com</p>
+              <p><i class="icon_phone"></i><a href="tel:+16266786173" style="color: #ffffff;">(626) 678-6173</a></p>
+              <p><i class="icon_mail"></i><a href="mailto:wanbangatl@gmail.com" style="color: #ffffff;">wanbangatl@gmail.com</a></p>
             </div>
           </div>
         </div>
