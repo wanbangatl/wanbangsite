@@ -203,6 +203,7 @@
       padding: 0 !important;
       position: relative;
       font-size: 12px;
+      height: 100%;
     }
     
     .top-header-area .top-header-content a:first-child {
@@ -216,11 +217,25 @@
       text-align: center !important;
       display: inline-block !important;
       font-size: 14px !important;
+      line-height: 1 !important;
+      vertical-align: middle !important;
     }
     
     .top-header-area .top-header-content a span {
       white-space: nowrap !important;
       font-weight: 500 !important;
+      line-height: 1 !important;
+      vertical-align: middle !important;
+    }
+    
+    /* Make sure all icons have the same baseline */
+    .top-header-area .top-header-content .fa {
+      position: relative;
+      top: 0;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 14px;
     }
     
     /* Add responsive styles for small screens */
